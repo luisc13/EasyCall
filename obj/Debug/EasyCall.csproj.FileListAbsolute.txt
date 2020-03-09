@@ -1,0 +1,9 @@
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\bin\Debug\EasyCall.exe.config
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\bin\Debug\EasyCall.exe
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\bin\Debug\EasyCall.pdb
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\obj\Debug\EasyCall.csprojAssemblyReference.cache
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\obj\Debug\EasyCall.Form1.resources
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\obj\Debug\EasyCall.Properties.Resources.resources
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\obj\Debug\EasyCall.csproj.GenerateResource.cache
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\obj\Debug\EasyCall.exe
+C:\Users\gunai\OneDrive\Documentos\faculdade\EasyCall\obj\Debug\EasyCall.pdb
