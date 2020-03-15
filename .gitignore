@@ -1,3 +1,7 @@
 # SQL Server files
 *.mdf
 *.ldf
+*.vs/*
+*.cache
+*.sqlite
+*.duo
