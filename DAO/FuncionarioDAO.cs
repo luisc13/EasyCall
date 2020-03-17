@@ -26,6 +26,7 @@ namespace EasyCall.DAO
                 if (dr.HasRows)
                 {
                     isValid = true;
+                    // seta usuario
                 }
             }
             catch (SqlException ex)
