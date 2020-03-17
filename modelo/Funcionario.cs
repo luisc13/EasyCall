@@ -18,18 +18,15 @@ namespace EasyCall.modelo
         static string CPF;
         static string email;
 
-        public static void isLoginValido(string login, string senha)
+        public static bool fazerLogin(string login, string senha)
         {
+            bool isValid = false;
             FuncionarioDAO dao = new FuncionarioDAO();
-            if (dao.Logar(login,senha)
+            if (dao.Logar(login,senha))
             {
-                // chama a segunda tela
-                MessageBox.Show("logado");
+                isValid = true;
             }
-            else
-            {
-                MessageBox.Show("usuario ou senha incorretos");
-            }
+            return isValid;
             
         }
 

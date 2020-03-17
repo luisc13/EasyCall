@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyCall.modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,33 +18,31 @@ namespace EasyCall
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
-
+            if (validaCampos(tbLogin.Text, tbSenha.Text))
+            {
+                if (Funcionario.fazerLogin(tbLogin.Text, tbSenha.Text))
+                {
+                    // chama a segunda tela
+                    MessageBox.Show("logado");
+                }
+                else
+                {
+                    MessageBox.Show("usuario ou senha incorretos");
+                }
+            }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        bool validaCampos(string login, string senha)
         {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form2 teste = new Form2();
-            teste.Show();
-
-
+            bool isValid = true;
+            if (login.Equals("") || login == null || senha.Equals("") || senha == null)
+            {
+                MessageBox.Show("*Campos obrigatorios não preenchidos");
+                isValid = false;
+            }
+            return isValid;
         }
     }
 }

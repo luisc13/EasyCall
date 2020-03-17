@@ -14,7 +14,7 @@ namespace EasyCall.DAO
 
         public Conexao()
         {
-            con.ConnectionString = @"Data Source=LAPTOP-OGHHCABF\SQLEXPRESS;Initial Catalog=db_callcenter;User ID=sa;Password=toledo";
+            con.ConnectionString = @"Data Source=LAPTOP-OGHHCABF\SQLEXPRESS;Initial Catalog=EasyCall;User ID=sa;Password=toledo";
         }
 
         public SqlConnection conectar ()
@@ -33,13 +33,12 @@ namespace EasyCall.DAO
             return con;
         }
 
-        public SqlConnection desconectar ()
+        public void desconectar ()
         {
             if (con.State == System.Data.ConnectionState.Open)
             {
                 con.Close();
             }
-            return con;
         }
     }
 }

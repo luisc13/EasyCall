@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEntrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbLogin = new System.Windows.Forms.TextBox();
+            this.tbSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnEntrar
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe Script", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(76, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 46);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Entrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEntrar.Font = new System.Drawing.Font("Segoe Script", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Location = new System.Drawing.Point(76, 257);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(94, 46);
+            this.btnEntrar.TabIndex = 0;
+            this.btnEntrar.Text = "Entrar";
+            this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // label1
             // 
@@ -69,32 +69,34 @@
             this.label2.Size = new System.Drawing.Size(97, 40);
             this.label2.TabIndex = 2;
             this.label2.Text = "Senha";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // tbLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(60, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 3;
+            this.tbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLogin.Location = new System.Drawing.Point(60, 131);
+            this.tbLogin.Name = "tbLogin";
+            this.tbLogin.Size = new System.Drawing.Size(129, 22);
+            this.tbLogin.TabIndex = 3;
             // 
-            // textBox2
+            // tbSenha
             // 
-            this.textBox2.Location = new System.Drawing.Point(60, 222);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 4;
+            this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSenha.Location = new System.Drawing.Point(60, 222);
+            this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
+            this.tbSenha.Size = new System.Drawing.Size(129, 22);
+            this.tbSenha.TabIndex = 4;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnEntrar);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.tbSenha);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tbLogin);
             this.panel1.Location = new System.Drawing.Point(62, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(668, 396);
@@ -111,7 +113,6 @@
             this.label4.Size = new System.Drawing.Size(208, 125);
             this.label4.TabIndex = 7;
             this.label4.Text = "Call";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -124,7 +125,6 @@
             this.label3.Size = new System.Drawing.Size(249, 125);
             this.label3.TabIndex = 6;
             this.label3.Text = "Easy";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Form1
             // 
@@ -136,8 +136,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -146,11 +144,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbLogin;
+        private System.Windows.Forms.TextBox tbSenha;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
