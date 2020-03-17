@@ -8,6 +8,8 @@ namespace EasyCall.modelo
 {
     class Funcionario
     {
+        static int idfuncionario;
+        static int iddivida;
         static string login;
         static string senha;
         static string nome;
@@ -20,10 +22,11 @@ namespace EasyCall.modelo
             return true;
         }
 
-        void setFuncionario()
+        void setFuncionario(string login, string senha)
         {
             // iniciar após login
             // seta dados do funcionario pegando do banco de dados
+            // busca no banco
         }
     }
 }

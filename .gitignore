@@ -1,15 +1,12 @@
 # SQL Server files
 *.mdf
 *.ldf
-<<<<<<< HEAD
 *.ide
 *.suo
 *.cache
 *.sqlite
 *.lock
-=======
 *.vs/*
-*.cache
-*.sqlite
 *.duo
->>>>>>> f4d7caffa7f4f674addcc304ecc473cf58939173
+*bin/*
+*obj/*

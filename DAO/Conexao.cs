@@ -10,16 +10,11 @@ namespace EasyCall.DAO
 {
     class Conexao
     {
-        SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
         SqlConnection con = new SqlConnection();
 
         public Conexao()
         {
-            builder.DataSource = ""; // caminho
-            builder.InitialCatalog = ""; // nome do banco
-            builder.UserID = ""; // usuario
-            builder.Password = ""; // senha
-            con.ConnectionString = builder.ConnectionString; // caminho do banco
+            con.ConnectionString = @"Data Source=LAPTOP-OGHHCABF\SQLEXPRESS;Initial Catalog=db_callcenter;User ID=sa;Password=toledo";
         }
 
         public SqlConnection conectar ()
