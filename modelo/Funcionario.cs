@@ -10,13 +10,12 @@ namespace EasyCall.modelo
 {
     class Funcionario
     {
-        static int idfuncionario;
-        static int iddivida;
-        static string login;
-        static string senha;
-        static string nome;
-        static string CPF;
-        static string email;
+        public static int idFuncionario;
+        public static string login;
+        public static string senha;
+        public static string nome;
+        public static string cpf;
+        public static string email;
 
         public static bool fazerLogin(string login, string senha)
         {
@@ -27,14 +26,7 @@ namespace EasyCall.modelo
                 isValid = true;
             }
             return isValid;
-            
         }
 
-        public static void setFuncionario(string login, string senha)
-        {
-            // iniciar após login
-            // seta dados do funcionario pegando do banco de dados
-            // busca no banco
-        }
     }
 }

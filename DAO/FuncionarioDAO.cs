@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyCall.modelo;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -26,7 +27,14 @@ namespace EasyCall.DAO
                 if (dr.HasRows)
                 {
                     isValid = true;
-                    // seta usuario
+                    while(dr.Read()) // seta o funcionario
+                    {
+                        Funcionario.idFuncionario = Convert.ToInt32(dr["idfuncionario"]);
+                        Funcionario.login = Convert.ToString(dr["login"]);
+                        Funcionario.senha = Convert.ToString(dr["senha"]);
+                        Funcionario.cpf = Convert.ToString(dr["cpf"]);
+                        Funcionario.email = Convert.ToString(dr["email"]);
+                    }
                 }
             }
             catch (SqlException ex)
