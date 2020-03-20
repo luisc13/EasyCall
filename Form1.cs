@@ -24,8 +24,9 @@ namespace EasyCall
             {
                 if (Funcionario.fazerLogin(tbLogin.Text, tbSenha.Text))
                 {
-                    // chama a segunda tela
-                    MessageBox.Show("logado");
+                    var tela2 = new Form2();
+                    tela2.Show();
+                    this.Hide();
                 }
                 else
                 {

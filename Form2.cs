@@ -12,9 +12,15 @@ namespace EasyCall
 {
     public partial class Form2 : Form
     {
+        private int seg = 0;
         public Form2()
         {
             InitializeComponent();
+            tParaLigacao.Enabled = true;
+            if (seg == 5)
+            {
+                fazerligacao();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,44 +30,22 @@ namespace EasyCall
             this.Close();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void tParaLigacao_Tick(object sender, EventArgs e)
         {
-
+            this.seg += 1;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void fazerligacao()
         {
+            MessageBox.Show("iniciando ligação...");
+            this.seg = 0;
+            tParaLigacao.Enabled = false;
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
+            // ativar timer da ligação em si
+            // buscar dados no banco
+            // mostrar na tela os dados
+            // depois que o tempo acabar apagar os dados da tela
+            // iniicar timer para ligar novamente
         }
     }
 }

@@ -43,6 +43,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tParaLigacao = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,6 @@
             this.label1.Size = new System.Drawing.Size(57, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Devedor";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -92,7 +92,6 @@
             this.label4.Size = new System.Drawing.Size(55, 17);
             this.label4.TabIndex = 5;
             this.label4.Text = "Telefone";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -113,7 +112,6 @@
             this.label6.Size = new System.Drawing.Size(107, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "Data Vencimento";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label8
             // 
@@ -124,7 +122,6 @@
             this.label8.Size = new System.Drawing.Size(65, 17);
             this.label8.TabIndex = 9;
             this.label8.Text = "Juros Dia";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -135,7 +132,6 @@
             this.label7.Size = new System.Drawing.Size(76, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Dias Atraso";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label9
             // 
@@ -193,7 +189,11 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(425, 106);
             this.panel2.TabIndex = 15;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // tParaLigacao
+            // 
+            this.tParaLigacao.Interval = 1000;
+            this.tParaLigacao.Tick += new System.EventHandler(this.tParaLigacao_Tick);
             // 
             // Form2
             // 
@@ -205,7 +205,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -229,5 +228,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Timer tParaLigacao;
     }
 }
