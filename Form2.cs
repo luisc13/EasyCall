@@ -17,10 +17,7 @@ namespace EasyCall
         {
             InitializeComponent();
             tParaLigacao.Enabled = true;
-            if (seg == 5)
-            {
-                fazerligacao();
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,6 +30,10 @@ namespace EasyCall
         private void tParaLigacao_Tick(object sender, EventArgs e)
         {
             this.seg += 1;
+            if (seg == 5)
+            {
+                fazerligacao();
+            }
         }
 
         public void fazerligacao()
