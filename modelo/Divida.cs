@@ -12,7 +12,7 @@ namespace EasyCall.modelo
         public string descricao;
         public DateTime dataVencimento;
         public int idFuncionario;
-        public int iBbanco;
+        public int idBbanco;
         public int idDevedor;
     }
 }

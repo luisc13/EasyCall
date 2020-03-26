@@ -48,5 +48,16 @@ namespace EasyCall
             // depois que o tempo acabar apagar os dados da tela
             // iniicar timer para ligar novamente
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var ocorrencias = new Ocorrencia();
+            ocorrencias.Show();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
