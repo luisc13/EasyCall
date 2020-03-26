@@ -17,7 +17,7 @@ namespace EasyCall.DAO
         public bool Logar(string login, string senha)
         {
             bool isValid = false;
-            cmd.CommandText = "SELECT * FROM tab_funcionario WHERE tab_funcionario.LOGIN = @login AND tab_funcionario.SENHA = @senha";
+            cmd.CommandText = "SELECT * FROM funcionario WHERE funcionario.LOGIN = @login AND funcionario.SENHA = @senha";
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@senha", senha);
             try

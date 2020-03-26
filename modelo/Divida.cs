@@ -8,8 +8,10 @@ namespace EasyCall.modelo
 {
     class Divida
     {
+        public int idDivida;
+        public string status;
         public double valor;
-        public string descricao;
+        public string ocorrencia;
         public DateTime dataVencimento;
         public int idFuncionario;
         public int idBbanco;
