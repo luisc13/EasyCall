@@ -19,9 +19,9 @@ namespace EasyCall
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String Ocor;
-            Ocor =Convert.ToString(TxbOcorrencia);
+            String ocr = TxbOcorrencia.Text;
             MessageBox.Show("Enviado com Sucesso");
+            // registra ocorrencia
             this.Close();
 
         }

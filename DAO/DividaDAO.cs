@@ -35,7 +35,7 @@ namespace EasyCall.DAO
                         retorno.idFuncionario = Convert.ToInt32(dr["IDFUNCIONARIO"]);
                         retorno.idBbanco = Convert.ToInt32(dr["IDBANCO"]);
                         retorno.idDevedor = Convert.ToInt32(dr["IDDEVEDOR"]);
-                        retorno.status = Convert.ToString(dr["STATUS"])
+                        retorno.status = Convert.ToString(dr["STATUS"]);
                     }
                 }
             }
