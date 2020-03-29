@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EasyCall.DAO;
+using EasyCall.modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +19,14 @@ namespace EasyCall
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             String ocr = TxbOcorrencia.Text;
-            MessageBox.Show("Enviado com Sucesso");
             // registra ocorrencia
+
+            //var email = new Email();
+            //MessageBox.Show(email.enviarEmail("gunais1234@gmail.com").ToString());
+
             this.Close();
 
         }
