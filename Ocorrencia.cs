@@ -19,13 +19,13 @@ namespace EasyCall
             InitializeComponent();
         }
 
-        private void btnEnviar_Click(object sender, EventArgs e)
+        private async void btnEnviar_Click(object sender, EventArgs e)
         {
             String ocr = TxbOcorrencia.Text;
             // registra ocorrencia
 
-            //var email = new Email();
-            //MessageBox.Show(email.enviarEmail("gunais1234@gmail.com").ToString());
+            var email = new Email();
+            MessageBox.Show(email.enviarEmail("gunais1234@gmail.com").ToString());
 
             this.Close();
 

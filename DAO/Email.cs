@@ -27,15 +27,25 @@ namespace EasyCall.DAO
         {
             bool ok = false;
 
+            string items = null;
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    items = dialog.FileName;
+                }
+            }
+
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("easycall.project@gmail.com");
             mail.To.Add(new MailAddress(para));
             mail.Body = "pague oque deve...";
             mail.Subject = "Negociação de credito - EasyCall";
+            mail.Attachments.Add(new Attachment(items));
 
             try
             {
-                client.Send(mail);
+                client.SendMailAsync(mail);
                 ok = true;
             }
             catch (Exception ex)
