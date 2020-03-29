@@ -25,7 +25,7 @@ namespace EasyCall
             // registra ocorrencia
 
             var email = new Email();
-            MessageBox.Show(email.enviarEmail("gunais1234@gmail.com").ToString());
+            MessageBox.Show(email.enviarEmail(ocr).ToString());
 
             this.Close();
 
