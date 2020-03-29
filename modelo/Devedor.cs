@@ -8,9 +8,10 @@ namespace EasyCall.modelo
 {
     class Devedor
     {
+        public int iddevedor;
         public string nome;
         public string cpf;
         public string email;
-        public int telefone;
+        public string telefone;
     }
 }
