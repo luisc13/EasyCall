@@ -17,14 +17,6 @@ namespace EasyCall
         {
             InitializeComponent();
             tParaLigacao.Enabled = true;
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form1 voltar = new Form1();
-            voltar.Show();
-            this.Close();
         }
 
         private void tParaLigacao_Tick(object sender, EventArgs e)
@@ -49,15 +41,15 @@ namespace EasyCall
             // iniicar timer para ligar novamente
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnDesligar_Click(object sender, EventArgs e)
         {
             var ocorrencias = new Ocorrencia();
             ocorrencias.Show();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
