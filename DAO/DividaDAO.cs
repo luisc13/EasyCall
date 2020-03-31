@@ -11,14 +11,14 @@ namespace EasyCall.DAO
 {
     class DividaDAO
     {
-        public Divida getDivida(int id)
+        public Divida getDivida(int iddevedor)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
             SqlDataReader dr;
 
-            cmd.CommandText = "SELECT * FROM DIVIDA WHERE DIVIDA.IDDIVIDA = @ID";
-            cmd.Parameters.AddWithValue("@ID", id);
+            cmd.CommandText = "SELECT * FROM DIVIDA WHERE DIVIDA.IDDEVEDOR = @ID";
+            cmd.Parameters.AddWithValue("@ID", iddevedor);
             Divida retorno = new Divida();
             try
             {
