@@ -51,5 +51,14 @@ namespace EasyCall
         {
             Application.Exit();
         }
+
+        public void calculoJuros(Double valorParcela, DateTime dataVencimento, decimal juros)
+        {
+            Double valorJuros = 1;
+            var vencimento = dataVencimento;
+            var hoje = DateTime.Now;
+            if (hoje > vencimento)
+
+        }
     }
 }
