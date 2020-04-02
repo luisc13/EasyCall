@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -27,25 +29,19 @@ namespace EasyCall.DAO
         {
             bool ok = false;
 
-            string items = null;
-            using (OpenFileDialog dialog = new OpenFileDialog())
-            {
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    items = dialog.FileName;
-                }
-            }
+            string anexo = verificaArquivo();
 
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("easycall.project@gmail.com");
             mail.To.Add(new MailAddress(para));
-            mail.Body = "pague oque deve...";
+            mail.Body = "Mensagem automatica - segue aqui o boleto...";
             mail.Subject = "Negociação de credito - EasyCall";
-            mail.Attachments.Add(new Attachment(items));
+            mail.Attachments.Add(new Attachment(anexo));
 
             try
             {
                 await client.SendMailAsync(mail);
+                client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
                 ok = true;
             }
             catch (Exception ex)
@@ -54,6 +50,39 @@ namespace EasyCall.DAO
             }
 
             return ok;
+        }
+
+        private void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+
+            }
+            else if (e.Cancelled)
+            {
+
+            }
+            else
+            {
+                File.Delete("Anexo.txt");
+            }
+        }
+
+        private string verificaArquivo()
+        {
+            string caminho = "Anexo.txt";
+            if (File.Exists(caminho))
+            {
+                return caminho;
+            } else
+            {
+                StreamWriter sw = File.CreateText(caminho);
+                sw.WriteLine("EasyCall negociações");
+                sw.WriteLine();
+                sw.WriteLine("Você esta recebendo esse email pois solicitou o envio do boleto");
+                sw.Close();
+            }
+            return caminho;
         }
     }
 }
