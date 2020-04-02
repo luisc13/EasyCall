@@ -23,7 +23,7 @@ namespace EasyCall.DAO
             this.client.Credentials = new NetworkCredential("easycall.project@gmail.com", "Toledo123");
         }
 
-        public bool enviarEmail(string para)
+        public async Task<bool> enviarEmail(string para)
         {
             bool ok = false;
 
@@ -45,7 +45,7 @@ namespace EasyCall.DAO
 
             try
             {
-                client.SendMailAsync(mail);
+                await client.SendMailAsync(mail);
                 ok = true;
             }
             catch (Exception ex)
