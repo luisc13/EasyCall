@@ -11,16 +11,15 @@ namespace EasyCall.DAO
 {
     class DevedorDAO
     {
-        public Devedor getDevedor(int id)
+        public Devedor getDevedor()
         {
             var retorno = new Devedor();
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
             SqlDataReader dr;
 
-            cmd.CommandText = "SELECT * FROM DEVEDOR WHERE DEVEDOR.IDDEVEDOR = @ID";
-            cmd.Parameters.AddWithValue("@ID", id);
-            
+            cmd.CommandText = "SELECT TOP 1 * FROM DEVEDOR INNER JOIN DIVIDA ON DIVIDA.IDDIVIDA = DEVEDOR.IDDEVEDOR" +
+                " WHERE DIVIDA.STATUS = 'PENDENTE' ORDER BY NEWID()";            
             try
             {
                 cmd.Connection = conexao.conectar();

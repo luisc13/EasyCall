@@ -26,7 +26,7 @@ namespace EasyCall
             // registra ocorrencia
 
             var email = new Email();
-            MessageBox.Show(email.enviarEmail(ocr).ToString());
+            await email.enviarEmail(ocr);
 
             
             SqlCommand cmd = new SqlCommand();
