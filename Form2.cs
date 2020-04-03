@@ -52,13 +52,20 @@ namespace EasyCall
             Application.Exit();
         }
 
-        public void calculoJuros(Double valorParcela, DateTime dataVencimento, decimal juros)
+        public double calculoJuros(Double valorParcela, DateTime dataVencimento)
         {
-            Double valorJuros = 1;
+            Double valorJuros = 1 / 100;
+            Double valorJurosTotal;
             var vencimento = dataVencimento;
             var hoje = DateTime.Now;
+            int diasAtraso = 0;
             if (hoje > vencimento)
-
+            {
+                diasAtraso = (hoje.Date - dataVencimento.Date).Days;
+                valorJurosTotal = valorParcela * valorJuros * diasAtraso;
+                valorParcela = valorParcela + valorJurosTotal;
+            }
+            return valorParcela;
         }
     }
 }
