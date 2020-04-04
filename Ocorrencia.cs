@@ -25,21 +25,20 @@ namespace EasyCall
             String ocr = TxbOcorrencia.Text;
             // registra ocorrencia
 
-            var email = new Email();
-            await email.enviarEmail(ocr);
+            //var email = new Email();
+            //await email.enviarEmail(ocr);
 
             
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
-            SqlDataReader dr;
 
-            cmd.CommandText = "INSERT INTO DIVIDA(Ocorrencia) VALUES (@ocorrencia)";
+            cmd.CommandText = "UPDATE DIVIDA SET OCORRENCIA = @ocorrencia WHERE IDDIVIDA = 4";
             cmd.Parameters.AddWithValue("@ocorrencia", ocr);
-            this.Close();
             try
             {
                 cmd.Connection = conexao.conectar();
-                dr = cmd.ExecuteReader();
+                cmd.ExecuteNonQuery();
+                this.Close();
             }
             catch (SqlException ex)
             {
