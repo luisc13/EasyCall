@@ -25,17 +25,17 @@ namespace EasyCall.DAO
             this.client.Credentials = new NetworkCredential("easycall.project@gmail.com", "Toledo123");
         }
 
-        public async Task<bool> enviarEmail(string para)
+        public async Task<bool> enviarEmail(string para, double valorParcela)
         {
             bool ok = false;
 
-            string anexo = verificaArquivo();
+            string anexo = verificaArquivo(valorParcela);
 
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("easycall.project@gmail.com");
             mail.To.Add(new MailAddress(para));
             mail.Body = "Mensagem automatica - segue aqui o boleto...";
-            mail.Subject = "Negociação de credito - EasyCall";
+            mail.Subject = "Negociacao de credito - EasyCall";
             mail.Attachments.Add(new Attachment(anexo));
 
             try
@@ -56,32 +56,27 @@ namespace EasyCall.DAO
         {
             if (e.Error != null)
             {
-
+                // caso de erro
             }
             else if (e.Cancelled)
             {
-
-            }
-            else
-            {
-                File.Delete("Anexo.txt");
+                // caso seja cancelado
             }
         }
 
-        private string verificaArquivo()
+        private string verificaArquivo(double valorParcela)
         {
             string caminho = "Anexo.txt";
             if (File.Exists(caminho))
             {
-                return caminho;
-            } else
-            {
-                StreamWriter sw = File.CreateText(caminho);
-                sw.WriteLine("EasyCall negociações");
-                sw.WriteLine();
-                sw.WriteLine("Você esta recebendo esse email pois solicitou o envio do boleto");
-                sw.Close();
+                File.Delete(caminho);
             }
+            StreamWriter sw = File.CreateText(caminho);
+            sw.WriteLine("EasyCall negociações");
+            sw.WriteLine();
+            sw.WriteLine("Você esta recebendo esse email pois solicitou o envio do boleto");
+            sw.WriteLine("Você precisa pagar: R$" + valorParcela);
+            sw.Close();
             return caminho;
         }
     }
