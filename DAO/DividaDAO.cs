@@ -45,5 +45,23 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
+        public void setOcorrencia(String ocorrencia, int id) {
+
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+
+            cmd.CommandText = "UPDATE DIVIDA SET OCORRENCIA = @ocorrencia WHERE IDDIVIDA = @ID";
+            cmd.Parameters.AddWithValue("@ocorrencia", ocorrencia);
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
