@@ -16,9 +16,6 @@ namespace EasyCall
         public Form2()
         {
             InitializeComponent();
-            String data = "10/04/2020";
-            DateTime dt = DateTime.Parse(data);
-            MessageBox.Show(calculoJuros(200, dt));
             tParaLigacao.Enabled = true;
         }
 
