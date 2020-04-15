@@ -16,13 +16,16 @@ namespace EasyCall
         public Form2()
         {
             InitializeComponent();
+            String data = "10/04/2020";
+            DateTime dt = DateTime.Parse(data);
+            MessageBox.Show(calculoJuros(200, dt));
             tParaLigacao.Enabled = true;
         }
 
         private void tParaLigacao_Tick(object sender, EventArgs e)
         {
             this.seg += 1;
-            if (seg == 5)
+            if (seg == 10)
             {
                 fazerligacao();
             }
@@ -38,7 +41,7 @@ namespace EasyCall
             // buscar dados no banco
             // mostrar na tela os dados
             // depois que o tempo acabar apagar os dados da tela
-            // iniicar timer para ligar novamente
+            // inicicar timer para ligar novamente
         }
 
         private void btnDesligar_Click(object sender, EventArgs e)
@@ -52,13 +55,18 @@ namespace EasyCall
             Application.Exit();
         }
 
-        public void calculoJuros(Double valorParcela, DateTime dataVencimento, decimal juros)
+        public double calculoJuros(Double valorParcela, DateTime dataVencimento)
         {
-            Double valorJuros = 1;
-            var vencimento = dataVencimento;
+            Double valorJurosTotal;
             var hoje = DateTime.Now;
-            if (hoje > vencimento)
-
+            int diasAtraso = 0;
+            if (Hoje > dataVencimento)
+            {
+                diasAtraso = (hoje.Date - dataVencimento.Date).Days;
+                valorJurosTotal = ((valorParcela * 1) / 100 ) * diasAtraso;
+                valorParcela = valorParcela + valorJurosTotal;                
+            }
+            return valorParcela;
         }
     }
 }
