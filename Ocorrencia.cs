@@ -20,31 +20,14 @@ namespace EasyCall
             InitializeComponent();
         }
 
-        private async void btnEnviar_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             String ocr = TxbOcorrencia.Text;
-            // registra ocorrencia
 
-            //var email = new Email();
-            //await email.enviarEmail(ocr);
+            var dao = new DividaDAO();
+            dao.setOcorrencia(ocr, 1);
 
-            
-            SqlCommand cmd = new SqlCommand();
-            Conexao conexao = new Conexao();
-
-            cmd.CommandText = "UPDATE DIVIDA SET OCORRENCIA = @ocorrencia WHERE IDDIVIDA = 4";
-            cmd.Parameters.AddWithValue("@ocorrencia", ocr);
-            try
-            {
-                cmd.Connection = conexao.conectar();
-                cmd.ExecuteNonQuery();
-                this.Close();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            this.Close();
         }
     }
 }
