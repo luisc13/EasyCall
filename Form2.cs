@@ -57,7 +57,7 @@ namespace EasyCall
             Double valorJurosTotal;
             var hoje = DateTime.Now;
             int diasAtraso = 0;
-            if (Hoje > dataVencimento)
+            if (hoje > dataVencimento)
             {
                 diasAtraso = (hoje.Date - dataVencimento.Date).Days;
                 valorJurosTotal = ((valorParcela * 1) / 100 ) * diasAtraso;
