@@ -10,3 +10,5 @@
 *.duo
 *bin/*
 *obj/*
+
+DAO/Conexao.cs
