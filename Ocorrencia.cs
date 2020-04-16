@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,16 +20,14 @@ namespace EasyCall
             InitializeComponent();
         }
 
-        private async void btnEnviar_Click(object sender, EventArgs e)
+        private void btnEnviar_Click(object sender, EventArgs e)
         {
             String ocr = TxbOcorrencia.Text;
-            // registra ocorrencia
-
-            var email = new Email();
-            await email.enviarEmail(ocr, 200);
-
+            
+            var dao = new DividaDAO();
+            dao.setOcorrencia(ocr, 1);
+            
             this.Close();
-
         }
     }
 }
