@@ -25,7 +25,7 @@ namespace EasyCall
             // registra ocorrencia
 
             var email = new Email();
-            await email.enviarEmail(ocr);
+            await email.enviarEmail(ocr, 200);
 
             this.Close();
 
