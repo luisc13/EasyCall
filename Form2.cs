@@ -81,20 +81,17 @@ namespace EasyCall
             d = ddao.getDivida(devedor.iddevedor);
 
             var hoje = DateTime.Now;
-            int diasAtraso = diasAtraso = (hoje.Date - d.dataVencimento.Date).Days;
-           
-    
-
+            int diasAtraso = (hoje.Date - d.dataVencimento.Date).Days;
+            
             txbDevedor.Text = devedor.nome;
             txbEmail.Text = devedor.email;
             txbCpf.Text = devedor.cpf;
             txbTelefone.Text = devedor.telefone;
 
             txbContrato.Text = d.idDivida.ToString();
-            txbValor.Text = d.valor.ToString();
+            txbValor.Text = this.calculoJuros(d.valor, d.dataVencimento).ToString("c");
             txbDias.Text = diasAtraso.ToString();
             txbJurosdia.Text = "1%";
-            txbParcelas.Text = 
             txbData.Text = d.dataVencimento.ToString("dd/MM/yyyy");
             txbCondicao.Text = d.status;
         }
