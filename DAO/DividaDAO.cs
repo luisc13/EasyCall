@@ -45,5 +45,10 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
+
+        internal Divida getDivida()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
