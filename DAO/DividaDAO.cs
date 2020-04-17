@@ -45,6 +45,7 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
+      
         public void setOcorrencia(String ocorrencia, int id) {
 
             SqlCommand cmd = new SqlCommand();

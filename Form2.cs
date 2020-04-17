@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EasyCall.DAO;
+using EasyCall.modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,8 @@ namespace EasyCall
     public partial class Form2 : Form
     {
         private int seg = 0;
+        private object dao;
+
         public Form2()
         {
             InitializeComponent();
@@ -64,6 +68,35 @@ namespace EasyCall
                 valorParcela = valorParcela + valorJurosTotal;                
             }
             return valorParcela;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            Devedor devedor = new Devedor();
+            DevedorDAO dao = new DevedorDAO();
+            devedor = dao.getDevedor();
+
+            Divida d = new Divida();
+            DividaDAO ddao = new DividaDAO();
+            d = ddao.getDivida(devedor.iddevedor);
+
+            var hoje = DateTime.Now;
+            int diasAtraso = diasAtraso = (hoje.Date - d.dataVencimento.Date).Days;
+           
+    
+
+            txbDevedor.Text = devedor.nome;
+            txbEmail.Text = devedor.email;
+            txbCpf.Text = devedor.cpf;
+            txbTelefone.Text = devedor.telefone;
+
+            txbContrato.Text = d.idDivida.ToString();
+            txbValor.Text = d.valor.ToString();
+            txbDias.Text = diasAtraso.ToString();
+            txbJurosdia.Text = "1%";
+            txbParcelas.Text = 
+            txbData.Text = d.dataVencimento.ToString("dd/MM/yyyy");
+            txbCondicao.Text = d.status;
         }
     }
 }
