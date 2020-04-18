@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tParaLigacao = new System.Windows.Forms.Timer(this.components);
             this.btnDesligar = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,14 +50,10 @@
             this.txbJurosdia = new System.Windows.Forms.TextBox();
             this.txbDias = new System.Windows.Forms.TextBox();
             this.txbCondicao = new System.Windows.Forms.TextBox();
-            this.txbParcelas = new System.Windows.Forms.TextBox();
             this.txbData = new System.Windows.Forms.TextBox();
+            this.onLigacao = new System.Windows.Forms.Timer(this.components);
+            this.btnEmail = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // label1
             // 
@@ -116,16 +110,6 @@
             this.btnDesligar.UseVisualStyleBackColor = true;
             this.btnDesligar.Click += new System.EventHandler(this.btnDesligar_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 251);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 16);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Parcelas em Atraso";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -140,7 +124,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 338);
+            this.label10.Location = new System.Drawing.Point(3, 292);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 16);
             this.label10.TabIndex = 12;
@@ -160,7 +144,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 301);
+            this.label6.Location = new System.Drawing.Point(3, 250);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 16);
             this.label6.TabIndex = 7;
@@ -252,27 +236,34 @@
             // 
             // txbCondicao
             // 
-            this.txbCondicao.Location = new System.Drawing.Point(7, 357);
+            this.txbCondicao.Location = new System.Drawing.Point(7, 311);
             this.txbCondicao.Name = "txbCondicao";
             this.txbCondicao.ReadOnly = true;
             this.txbCondicao.Size = new System.Drawing.Size(159, 20);
             this.txbCondicao.TabIndex = 25;
             // 
-            // txbParcelas
-            // 
-            this.txbParcelas.Location = new System.Drawing.Point(6, 270);
-            this.txbParcelas.Name = "txbParcelas";
-            this.txbParcelas.ReadOnly = true;
-            this.txbParcelas.Size = new System.Drawing.Size(159, 20);
-            this.txbParcelas.TabIndex = 26;
-            // 
             // txbData
             // 
-            this.txbData.Location = new System.Drawing.Point(7, 315);
+            this.txbData.Location = new System.Drawing.Point(7, 269);
             this.txbData.Name = "txbData";
             this.txbData.ReadOnly = true;
             this.txbData.Size = new System.Drawing.Size(159, 20);
             this.txbData.TabIndex = 27;
+            // 
+            // onLigacao
+            // 
+            this.onLigacao.Interval = 1000;
+            this.onLigacao.Tick += new System.EventHandler(this.onLigacao_Tick);
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.Location = new System.Drawing.Point(602, 368);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(102, 45);
+            this.btnEmail.TabIndex = 28;
+            this.btnEmail.Text = "Emitir email";
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // Form2
             // 
@@ -280,8 +271,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(817, 425);
+            this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.txbData);
-            this.Controls.Add(this.txbParcelas);
             this.Controls.Add(this.txbCondicao);
             this.Controls.Add(this.txbDias);
             this.Controls.Add(this.txbJurosdia);
@@ -302,7 +293,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label11);
             this.Name = "Form2";
             this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
@@ -313,14 +303,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer tParaLigacao;
         private System.Windows.Forms.Button btnDesligar;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
@@ -336,7 +324,8 @@
         private System.Windows.Forms.TextBox txbJurosdia;
         private System.Windows.Forms.TextBox txbDias;
         private System.Windows.Forms.TextBox txbCondicao;
-        private System.Windows.Forms.TextBox txbParcelas;
         private System.Windows.Forms.TextBox txbData;
+        private System.Windows.Forms.Timer onLigacao;
+        private System.Windows.Forms.Button btnEmail;
     }
 }

@@ -15,9 +15,13 @@ namespace EasyCall
 {
     public partial class Ocorrencia : Form
     {
-        public Ocorrencia()
+        private int idDivida;
+        private int idDevedor;
+        public Ocorrencia(int id, int devedorID)
         {
             InitializeComponent();
+            this.idDivida = id;
+            this.idDevedor = devedorID;
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
@@ -25,7 +29,10 @@ namespace EasyCall
             String ocr = TxbOcorrencia.Text;
             
             var dao = new DividaDAO();
-            dao.setOcorrencia(ocr, 1);
+            dao.setOcorrencia(ocr, idDivida);
+
+            var registro = "ocorrencia registrada";
+            Relatorio.inserirRegistro(idDivida, idDevedor, registro);
             
             this.Close();
         }
