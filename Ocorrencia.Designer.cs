@@ -60,6 +60,7 @@
             this.Controls.Add(this.btnEnviar);
             this.Name = "Ocorrencia";
             this.Text = "Ocorrencia";
+            this.Load += new System.EventHandler(this.Ocorrencia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
