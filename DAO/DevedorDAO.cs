@@ -18,7 +18,7 @@ namespace EasyCall.DAO
             Conexao conexao = new Conexao();
             SqlDataReader dr;
 
-            cmd.CommandText = "SELECT TOP 1 * FROM DEVEDOR INNER JOIN DIVIDA ON DIVIDA.IDDIVIDA = DEVEDOR.IDDEVEDOR" +
+            cmd.CommandText = "SELECT TOP 1 * FROM DEVEDOR INNER JOIN DIVIDA ON DIVIDA.IDDEVEDOR = DEVEDOR.IDDEVEDOR" +
                 " WHERE DIVIDA.STATUS = 'PENDENTE' ORDER BY NEWID()";            
             try
             {
