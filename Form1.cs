@@ -37,18 +37,19 @@ namespace EasyCall
 
         bool validaCampos(string login, string senha)
         {
-            bool isValid = true;
-            if (login.Equals("") || login == null || senha.Equals("") || senha == null)
+            if (String.IsNullOrEmpty(tbLogin.Text))
             {
-                MessageBox.Show("*Campos obrigatorios não preenchidos");
-                isValid = false;
+                MessageBox.Show("Campo *login orbigatório");
+                tbLogin.Focus();
+                return false;
             }
-            return isValid;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            if (String.IsNullOrEmpty(tbSenha.Text))
+            {
+                MessageBox.Show("Campo *senha obrigatório");
+                tbSenha.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }
