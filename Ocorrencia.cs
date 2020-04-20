@@ -27,14 +27,24 @@ namespace EasyCall
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             String ocr = TxbOcorrencia.Text;
-            
-            var dao = new DividaDAO();
-            dao.setOcorrencia(ocr, idDivida);
+            if (String.IsNullOrEmpty(ocr) ) {
+                MessageBox.Show("Você deve fornecer uma ocorrência antes de prosseguir");
+            }
+            else
+            {
+                var dao = new DividaDAO();
+                dao.setOcorrencia(ocr, idDivida);
 
-            var registro = "ocorrencia registrada";
-            Relatorio.inserirRegistro(idDivida, idDevedor, registro);
-            
-            this.Close();
+                var registro = "ocorrencia registrada";
+                Relatorio.inserirRegistro(idDivida, idDevedor, registro);
+
+                this.Close();
+            }
+        }
+
+        private void Ocorrencia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
