@@ -11,4 +11,4 @@
 *bin/*
 *obj/*
 
-DAO/Conexao.cs
+*DAO/Conexao.cs
