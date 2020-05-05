@@ -41,6 +41,7 @@ namespace EasyCall.DAO
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
             SqlDataReader dr;
+            var ocrDAO = new OcorrenciaDAO();
 
             switch (buscarPor)
             {

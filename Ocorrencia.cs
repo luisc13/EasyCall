@@ -32,7 +32,7 @@ namespace EasyCall
             }
             else
             {
-                var dao = new DividaDAO();
+                var dao = new OcorrenciaDAO();
                 dao.setOcorrencia(ocr, idDivida);
 
                 var registro = "ocorrencia registrada";

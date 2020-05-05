@@ -30,10 +30,9 @@ namespace EasyCall.DAO
                     {
                         retorno.idDivida = Convert.ToInt32(dr["IDDIVIDA"]);
                         retorno.valor = Convert.ToDouble(dr["VALOR"]);
-                        retorno.ocorrencia = Convert.ToString(dr["OCORRENCIA"]);
                         retorno.dataVencimento = Convert.ToDateTime(dr["DATAVENCIMENTO"]);
-                        retorno.idFuncionario = Convert.ToInt32(dr["IDFUNCIONARIO"]);
-                        retorno.idBbanco = Convert.ToInt32(dr["IDBANCO"]);
+                        retorno.idUsuario = Convert.ToInt32(dr["IDUSUARIO"]);
+                        retorno.idEmpresa = Convert.ToInt32(dr["IDEMPRESA"]);
                         retorno.idDevedor = Convert.ToInt32(dr["IDDEVEDOR"]);
                         retorno.status = Convert.ToString(dr["STATUS"]);
                     }
@@ -46,23 +45,5 @@ namespace EasyCall.DAO
             return retorno;
         }
       
-        public void setOcorrencia(String ocorrencia, int id) {
-
-            SqlCommand cmd = new SqlCommand();
-            Conexao conexao = new Conexao();
-
-            cmd.CommandText = "UPDATE DIVIDA SET OCORRENCIA = @ocorrencia WHERE IDDIVIDA = @ID";
-            cmd.Parameters.AddWithValue("@ocorrencia", ocorrencia);
-            cmd.Parameters.AddWithValue("@id", id);
-            try
-            {
-                cmd.Connection = conexao.conectar();
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }

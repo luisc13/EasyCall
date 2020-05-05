@@ -11,10 +11,9 @@ namespace EasyCall.modelo
         public int idDivida;
         public string status;
         public double valor;
-        public string ocorrencia;
         public DateTime dataVencimento;
-        public int idFuncionario;
-        public int idBbanco;
+        public int idUsuario;
+        public int idEmpresa;
         public int idDevedor;
     }
 }

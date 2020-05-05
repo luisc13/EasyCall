@@ -22,7 +22,7 @@ namespace EasyCall
         {
             if (validaCampos(tbLogin.Text, tbSenha.Text))
             {
-                if (Funcionario.fazerLogin(tbLogin.Text, tbSenha.Text))
+                if (Usuario.fazerLogin(tbLogin.Text, tbSenha.Text))
                 {
                     var tela2 = new Form2();
                     tela2.Show();

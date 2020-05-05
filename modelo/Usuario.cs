@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace EasyCall.modelo
 {
-    class Funcionario
+    class Usuario
     {
         public static int idFuncionario;
         public static string login;
@@ -20,7 +20,7 @@ namespace EasyCall.modelo
         public static bool fazerLogin(string login, string senha)
         {
             bool isValid = false;
-            FuncionarioDAO dao = new FuncionarioDAO();
+            var dao = new UsuarioDAO();
             if (dao.Logar(login,senha))
             {
                 isValid = true;

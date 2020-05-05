@@ -50,9 +50,10 @@
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\DevedorDAO.cs" />
     <Compile Include="DAO\DividaDAO.cs" />
+    <Compile Include="DAO\OcorrenciaDAO.cs" />
     <Compile Include="DAO\Relatorio.cs" />
     <Compile Include="DAO\SendEmail\Email.cs" />
-    <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,7 +69,8 @@
     <Compile Include="modelo\Banco.cs" />
     <Compile Include="modelo\Devedor.cs" />
     <Compile Include="modelo\Divida.cs" />
-    <Compile Include="modelo\Funcionario.cs" />
+    <Compile Include="modelo\OcorrenciaModelo.cs" />
+    <Compile Include="modelo\Usuario.cs" />
     <Compile Include="modelo\Registro.cs" />
     <Compile Include="Ocorrencia.cs">
       <SubType>Form</SubType>

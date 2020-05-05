@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace EasyCall.DAO
 {
-    class FuncionarioDAO
+    class UsuarioDAO
     {
         SqlCommand cmd = new SqlCommand();
         Conexao conexao = new Conexao();
@@ -17,7 +17,7 @@ namespace EasyCall.DAO
         public bool Logar(string login, string senha)
         {
             bool isValid = false;
-            cmd.CommandText = "SELECT * FROM funcionario WHERE funcionario.LOGIN = @login AND funcionario.SENHA = @senha";
+            cmd.CommandText = "SELECT * FROM USUARIO WHERE USUARIO.LOGIN = @login AND USUARIO.SENHA = @senha";
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@senha", senha);
             try
@@ -29,12 +29,12 @@ namespace EasyCall.DAO
                     isValid = true;
                     while(dr.Read()) // seta o funcionario
                     {
-                        Funcionario.idFuncionario = Convert.ToInt32(dr["idfuncionario"]);
-                        Funcionario.login = Convert.ToString(dr["login"]);
-                        Funcionario.senha = Convert.ToString(dr["senha"]);
-                        Funcionario.cpf = Convert.ToString(dr["cpf"]);
-                        Funcionario.email = Convert.ToString(dr["email"]);
-                        Funcionario.tipo = Convert.ToString(dr["tipo"]);
+                        Usuario.idFuncionario = Convert.ToInt32(dr["idusuario"]);
+                        Usuario.login = Convert.ToString(dr["login"]);
+                        Usuario.senha = Convert.ToString(dr["senha"]);
+                        Usuario.cpf = Convert.ToString(dr["cpf"]);
+                        Usuario.email = Convert.ToString(dr["email"]);
+                        Usuario.tipo = Convert.ToString(dr["tipo"]);
                     }
                 }
             }
