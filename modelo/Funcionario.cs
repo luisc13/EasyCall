@@ -13,9 +13,9 @@ namespace EasyCall.modelo
         public static int idFuncionario;
         public static string login;
         public static string senha;
-        public static string nome;
         public static string cpf;
         public static string email;
+        public static string tipo;
 
         public static bool fazerLogin(string login, string senha)
         {

@@ -25,7 +25,6 @@ namespace EasyCall
         public Form2()
         {
             InitializeComponent();
-            tParaLigacao.Enabled = true;
         }
 
         private void tParaLigacao_Tick(object sender, EventArgs e)
@@ -83,6 +82,7 @@ namespace EasyCall
         private void Form2_Load(object sender, EventArgs e)
         {
             mostrarDados();
+            tParaLigacao.Enabled = true;
         }
 
         private void limparDados()

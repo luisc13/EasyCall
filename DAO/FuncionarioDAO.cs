@@ -34,6 +34,7 @@ namespace EasyCall.DAO
                         Funcionario.senha = Convert.ToString(dr["senha"]);
                         Funcionario.cpf = Convert.ToString(dr["cpf"]);
                         Funcionario.email = Convert.ToString(dr["email"]);
+                        Funcionario.tipo = Convert.ToString(dr["tipo"]);
                     }
                 }
             }
