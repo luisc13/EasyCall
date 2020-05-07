@@ -57,5 +57,10 @@ namespace EasyCall
             var backdoor = new Form2();
             backdoor.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = tbLogin;
+        }
     }
 }
