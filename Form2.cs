@@ -134,5 +134,6 @@ namespace EasyCall
             var registro = "Email enviado com o valor a ser pago";
             Relatorio.inserirRegistro(d.idDivida, devedor.iddevedor, registro);
         }
+
     }
 }
