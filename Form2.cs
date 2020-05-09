@@ -52,8 +52,6 @@ namespace EasyCall
             this.onLigacao.Enabled = false;
             this.tempoLigacao = 0;
 
-            var ocorrencias = new Ocorrencia(d.idDivida, devedor.iddevedor);
-            ocorrencias.ShowDialog();
 
             limparDados();
             mostrarDados();
@@ -135,5 +133,10 @@ namespace EasyCall
             Relatorio.inserirRegistro(d.idDivida, devedor.iddevedor, registro);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var ocorrencias = new Ocorrencia(d.idDivida, devedor.iddevedor);
+            ocorrencias.Show();
+        }
     }
 }

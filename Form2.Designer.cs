@@ -62,8 +62,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
             this.txbComissao = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -117,7 +118,7 @@
             // 
             // btnDesligar
             // 
-            this.btnDesligar.Location = new System.Drawing.Point(334, 345);
+            this.btnDesligar.Location = new System.Drawing.Point(361, 419);
             this.btnDesligar.Name = "btnDesligar";
             this.btnDesligar.Size = new System.Drawing.Size(102, 45);
             this.btnDesligar.TabIndex = 16;
@@ -272,7 +273,7 @@
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(222, 345);
+            this.btnEmail.Location = new System.Drawing.Point(253, 419);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(102, 45);
             this.btnEmail.TabIndex = 28;
@@ -382,6 +383,14 @@
             this.panel3.Size = new System.Drawing.Size(183, 100);
             this.panel3.TabIndex = 36;
             // 
+            // txbComissao
+            // 
+            this.txbComissao.Location = new System.Drawing.Point(6, 48);
+            this.txbComissao.Name = "txbComissao";
+            this.txbComissao.ReadOnly = true;
+            this.txbComissao.Size = new System.Drawing.Size(159, 20);
+            this.txbComissao.TabIndex = 21;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -392,20 +401,23 @@
             this.label13.TabIndex = 5;
             this.label13.Text = "Comissão EasyCall";
             // 
-            // txbComissao
+            // button1
             // 
-            this.txbComissao.Location = new System.Drawing.Point(6, 48);
-            this.txbComissao.Name = "txbComissao";
-            this.txbComissao.ReadOnly = true;
-            this.txbComissao.Size = new System.Drawing.Size(159, 20);
-            this.txbComissao.TabIndex = 21;
+            this.button1.Location = new System.Drawing.Point(145, 419);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 45);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Ocorrência";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(614, 423);
+            this.ClientSize = new System.Drawing.Size(614, 476);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -466,5 +478,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbComissao;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
     }
 }
