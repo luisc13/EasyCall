@@ -31,7 +31,7 @@ namespace EasyCall.DAO
                         retorno.idDivida = Convert.ToInt32(dr["IDDIVIDA"]);
                         retorno.valor = Convert.ToDouble(dr["VALOR"]);
                         retorno.dataVencimento = Convert.ToDateTime(dr["DATAVENCIMENTO"]);
-                        retorno.idUsuario = Convert.ToInt32(dr["IDUSUARIO"]);
+                        //retorno.idUsuario = Convert.ToInt32(dr["IDUSUARIO"]);
                         retorno.idEmpresa = Convert.ToInt32(dr["IDEMPRESA"]);
                         retorno.idDevedor = Convert.ToInt32(dr["IDDEVEDOR"]);
                         retorno.status = Convert.ToString(dr["STATUS"]);

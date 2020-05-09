@@ -12,7 +12,6 @@ namespace EasyCall.modelo
         public string status;
         public double valor;
         public DateTime dataVencimento;
-        public int idUsuario;
         public int idEmpresa;
         public int idDevedor;
     }
