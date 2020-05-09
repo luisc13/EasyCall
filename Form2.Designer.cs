@@ -65,10 +65,13 @@
             this.txbComissao = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.LView = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -118,7 +121,7 @@
             // 
             // btnDesligar
             // 
-            this.btnDesligar.Location = new System.Drawing.Point(361, 419);
+            this.btnDesligar.Location = new System.Drawing.Point(502, 422);
             this.btnDesligar.Name = "btnDesligar";
             this.btnDesligar.Size = new System.Drawing.Size(102, 45);
             this.btnDesligar.TabIndex = 16;
@@ -273,7 +276,7 @@
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(253, 419);
+            this.btnEmail.Location = new System.Drawing.Point(394, 422);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(102, 45);
             this.btnEmail.TabIndex = 28;
@@ -287,7 +290,7 @@
             this.relatóriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(614, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -344,7 +347,7 @@
             this.panel1.Controls.Add(this.txbCpf);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txbTelefone);
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(12, 165);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 185);
             this.panel1.TabIndex = 34;
@@ -368,7 +371,7 @@
             this.panel2.Controls.Add(this.txbJurosdia);
             this.panel2.Controls.Add(this.txbDias);
             this.panel2.Controls.Add(this.txbValorInicial);
-            this.panel2.Location = new System.Drawing.Point(189, 35);
+            this.panel2.Location = new System.Drawing.Point(201, 165);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 247);
             this.panel2.TabIndex = 35;
@@ -378,7 +381,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.panel3.Controls.Add(this.txbComissao);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Location = new System.Drawing.Point(0, 237);
+            this.panel3.Location = new System.Drawing.Point(12, 367);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 100);
             this.panel3.TabIndex = 36;
@@ -403,7 +406,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(145, 419);
+            this.button1.Location = new System.Drawing.Point(286, 422);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 45);
             this.button1.TabIndex = 37;
@@ -411,12 +414,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panel4.Controls.Add(this.LView);
+            this.panel4.Location = new System.Drawing.Point(12, 27);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(710, 122);
+            this.panel4.TabIndex = 38;
+            // 
+            // LView
+            // 
+            this.LView.HideSelection = false;
+            this.LView.Location = new System.Drawing.Point(6, 13);
+            this.LView.Name = "LView";
+            this.LView.Size = new System.Drawing.Size(701, 97);
+            this.LView.TabIndex = 0;
+            this.LView.UseCompatibleStateImageBehavior = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(614, 476);
+            this.ClientSize = new System.Drawing.Size(734, 485);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -437,6 +459,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,5 +502,7 @@
         private System.Windows.Forms.TextBox txbComissao;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ListView LView;
     }
 }
