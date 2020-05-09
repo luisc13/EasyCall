@@ -1,4 +1,5 @@
-﻿using EasyCall.modelo;
+﻿using EasyCall.DAO;
+using EasyCall.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,10 +53,9 @@ namespace EasyCall
             return true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            var backdoor = new Form2();
-            backdoor.Show();
+            await Dados.carregarDados();
         }
 
         private void Form1_Load(object sender, EventArgs e)
