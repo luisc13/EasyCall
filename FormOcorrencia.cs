@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace EasyCall
 {
-    public partial class Ocorrencia : Form
+    public partial class FormOcorrencia : Form
     {
         private int idDivida;
         private int idDevedor;
-        public Ocorrencia(int id, int devedorID)
+        public FormOcorrencia(int id, int devedorID)
         {
             InitializeComponent();
             this.idDivida = id;

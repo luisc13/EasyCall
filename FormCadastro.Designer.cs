@@ -1,6 +1,6 @@
 ﻿namespace EasyCall
 {
-    partial class Form4
+    partial class FormCadastro
     {
         /// <summary>
         /// Required designer variable.

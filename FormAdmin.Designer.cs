@@ -1,6 +1,6 @@
 ﻿namespace EasyCall
 {
-    partial class Form3
+    partial class FormAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -114,7 +114,7 @@
             this.btnVerR.Text = "Ver Relatório";
             this.btnVerR.UseVisualStyleBackColor = true;
             // 
-            // Form3
+            // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -125,8 +125,9 @@
             this.Controls.Add(this.btnArquivo);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.panel1);
-            this.Name = "Form3";
+            this.Name = "FormAdmin";
             this.Text = "Form3";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

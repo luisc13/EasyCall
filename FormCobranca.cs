@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace EasyCall
 {
-    public partial class Form2 : Form
+    public partial class FormCobranca : Form
     {
         private int seg = 0;
         private int tempoLigacao = 0;
@@ -22,7 +22,7 @@ namespace EasyCall
 
         Divida d = new Divida();
         DividaDAO ddao = new DividaDAO();
-        public Form2()
+        public FormCobranca()
         {
             InitializeComponent();
         }
@@ -135,7 +135,7 @@ namespace EasyCall
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var ocorrencias = new Ocorrencia(d.idDivida, devedor.iddevedor);
+            var ocorrencias = new FormOcorrencia(d.idDivida, devedor.iddevedor);
             ocorrencias.Show();
         }
     }

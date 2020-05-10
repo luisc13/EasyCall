@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EasyCall
 {
-    public partial class Form4 : Form
+    public partial class FormCadastro : Form
     {
-        public Form4()
+        public FormCadastro()
         {
             InitializeComponent();
         }
