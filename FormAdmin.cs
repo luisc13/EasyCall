@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace EasyCall
 {
-    public partial class Form3 : Form
+    public partial class FormAdmin : Form
     {
-        public Form3()
+        public FormAdmin()
         {
             InitializeComponent();
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

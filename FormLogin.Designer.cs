@@ -1,6 +1,6 @@
 ﻿namespace EasyCall
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -49,7 +49,7 @@
             this.btnEntrar.Location = new System.Drawing.Point(76, 257);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(94, 46);
-            this.btnEntrar.TabIndex = 0;
+            this.btnEntrar.TabIndex = 5;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
@@ -160,16 +160,16 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Easy";
             // 
-            // Form1
+            // FormLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(798, 448);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "Form1";
+            this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "]";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

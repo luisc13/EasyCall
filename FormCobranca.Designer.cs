@@ -1,6 +1,6 @@
 ﻿namespace EasyCall
 {
-    partial class Form2
+    partial class FormCobranca
     {
         /// <summary>
         /// Required designer variable.

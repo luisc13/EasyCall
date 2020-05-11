@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace EasyCall
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -25,9 +25,17 @@ namespace EasyCall
             {
                 if (Usuario.fazerLogin(tbLogin.Text, tbSenha.Text))
                 {
-                    var tela2 = new Form2();
-                    tela2.Show();
-                    this.Hide();
+                    if (Usuario.tipo.Equals("admin"))
+                    {
+                        var telaAdmin = new FormAdmin();
+                        telaAdmin.Show();
+                        this.Hide();
+                    } else
+                    {
+                        var tela2 = new FormCobranca();
+                        tela2.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {
