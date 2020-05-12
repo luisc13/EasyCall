@@ -45,5 +45,26 @@ namespace EasyCall.DAO
 
             return isValid;
         }
+        public void setUsuario(String login, String senha, String email, String cpf, String tipo)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+
+            cmd.CommandText = "INSERT INTO USUARIO (LOGIN, SENHA, CPF, EMAIL, TIPO) VALUES(@LOGIN, @SENHA, @CPF, @EMAIL, @TIPO)";
+            cmd.Parameters.AddWithValue("@LOGIN", login);
+            cmd.Parameters.AddWithValue("@SENHA", senha);
+            cmd.Parameters.AddWithValue("@CPF", cpf);
+            cmd.Parameters.AddWithValue("@EMAIL",email);
+            cmd.Parameters.AddWithValue("@TIPO", tipo);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
-}
+    }

@@ -135,6 +135,7 @@
             this.btnCadastrar.TabIndex = 10;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnCancelar
             // 
@@ -142,13 +143,15 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 49);
             this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "Voltar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // Form4
+            // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(429, 294);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCadastrar);
@@ -162,7 +165,7 @@
             this.Controls.Add(this.txbCpf);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.txbLogin);
-            this.Name = "Form4";
+            this.Name = "FormCadastro";
             this.Text = "Form4";
             this.ResumeLayout(false);
             this.PerformLayout();
