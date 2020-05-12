@@ -23,8 +23,7 @@ namespace EasyCall
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            this.Hide();
+        { 
             var telaCadastro = new FormCadastro();
             telaCadastro.Show();
         }

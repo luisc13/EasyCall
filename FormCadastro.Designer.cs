@@ -67,8 +67,10 @@
             // 
             this.txbTipo.Location = new System.Drawing.Point(15, 240);
             this.txbTipo.Name = "txbTipo";
+            this.txbTipo.ReadOnly = true;
             this.txbTipo.Size = new System.Drawing.Size(140, 20);
             this.txbTipo.TabIndex = 3;
+            this.txbTipo.Text = "usuario";
             // 
             // txbEmail
             // 
