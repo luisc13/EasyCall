@@ -45,7 +45,7 @@ namespace EasyCall.DAO
 
             return isValid;
         }
-        public void setUsuario(String login, String senha, String email, String cpf, String tipo)
+        public void insertUsuario(String login, String senha, String email, String cpf, String tipo)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
