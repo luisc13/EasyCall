@@ -26,6 +26,7 @@ namespace EasyCall
         { 
             var telaCadastro = new FormCadastro();
             telaCadastro.Show();
+            this.Dispose();
         }
     }
 }

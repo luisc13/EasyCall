@@ -169,6 +169,7 @@
             this.Controls.Add(this.txbLogin);
             this.Name = "FormCadastro";
             this.Text = "Form4";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCadastro_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
