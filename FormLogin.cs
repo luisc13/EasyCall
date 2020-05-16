@@ -21,9 +21,10 @@ namespace EasyCall
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (validaCampos(tbLogin.Text, tbSenha.Text))
+            if (validaCampos())
             {
-                if (Usuario.fazerLogin(tbLogin.Text, tbSenha.Text))
+                string senha = FormCadastro.criptografarSenha(tbSenha.Text);
+                if (Usuario.fazerLogin(tbLogin.Text, senha))
                 {
                     if (Usuario.tipo.Equals("admin"))
                     {
@@ -44,7 +45,7 @@ namespace EasyCall
             }
         }
 
-        bool validaCampos(string login, string senha)
+        bool validaCampos()
         {
             if (String.IsNullOrEmpty(tbLogin.Text))
             {
