@@ -66,12 +66,17 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.LView = new System.Windows.Forms.ListView();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbxDevedor = new System.Windows.Forms.ListView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbxOcorrencia = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -290,7 +295,7 @@
             this.relatóriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1030, 24);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -417,27 +422,67 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.panel4.Controls.Add(this.LView);
+            this.panel4.Controls.Add(this.label15);
+            this.panel4.Controls.Add(this.lbxDevedor);
             this.panel4.Location = new System.Drawing.Point(12, 27);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(710, 122);
+            this.panel4.Size = new System.Drawing.Size(628, 122);
             this.panel4.TabIndex = 38;
             // 
-            // LView
+            // label15
             // 
-            this.LView.HideSelection = false;
-            this.LView.Location = new System.Drawing.Point(6, 13);
-            this.LView.Name = "LView";
-            this.LView.Size = new System.Drawing.Size(701, 97);
-            this.LView.TabIndex = 0;
-            this.LView.UseCompatibleStateImageBehavior = false;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(124, 16);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Lista de Devedores";
             // 
-            // Form2
+            // lbxDevedor
+            // 
+            this.lbxDevedor.HideSelection = false;
+            this.lbxDevedor.Location = new System.Drawing.Point(9, 22);
+            this.lbxDevedor.Name = "lbxDevedor";
+            this.lbxDevedor.Size = new System.Drawing.Size(600, 97);
+            this.lbxDevedor.TabIndex = 0;
+            this.lbxDevedor.UseCompatibleStateImageBehavior = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.lbxOcorrencia);
+            this.panel5.Location = new System.Drawing.Point(662, 60);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(328, 352);
+            this.panel5.TabIndex = 41;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 11);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(132, 16);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Ultimas Ocorrências";
+            // 
+            // lbxOcorrencia
+            // 
+            this.lbxOcorrencia.FormattingEnabled = true;
+            this.lbxOcorrencia.Location = new System.Drawing.Point(6, 30);
+            this.lbxOcorrencia.Name = "lbxOcorrencia";
+            this.lbxOcorrencia.Size = new System.Drawing.Size(315, 303);
+            this.lbxOcorrencia.TabIndex = 41;
+            // 
+            // FormCobranca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(734, 485);
+            this.ClientSize = new System.Drawing.Size(1030, 485);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel3);
@@ -447,7 +492,7 @@
             this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnDesligar);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form2";
+            this.Name = "FormCobranca";
             this.Text = "Form2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -460,6 +505,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,6 +551,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListView LView;
+        private System.Windows.Forms.ListView lbxDevedor;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ListBox lbxOcorrencia;
     }
 }
