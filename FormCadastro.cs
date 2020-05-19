@@ -1,4 +1,5 @@
 ﻿using EasyCall.DAO;
+using EasyCall.modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace EasyCall
             }
 
             //---------------------------
-            var senha = criptografarSenha(txbSenha.Text);
+            var senha = Utilitarios.criptografarSenha(txbSenha.Text);
             if (String.IsNullOrEmpty(senha) ) {
             MessageBox.Show("Preencher campo obrigatório 'SENHA'");
             }
@@ -68,35 +69,5 @@ namespace EasyCall
             Application.Exit();
         }
 
-        public static string criptografarSenha(string senha)
-        {
-            char[] chrPass = senha.ToCharArray();
-            string final = null;
-
-            int[] asc = new int[chrPass.Length];
-
-            for (int i = 0; i < chrPass.Length; i++)
-            {
-                asc[i] = Convert.ToInt32(chrPass[i]);
-            }
-
-            for (int i = 0; i < senha.Length; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    final = final + asc[i].ToString();
-                }
-                else
-                {
-                    if (Char.IsNumber(Convert.ToChar(asc[i] + 1)))
-                    {
-                        final = final + "@";
-                    }
-                    final = final + Convert.ToChar(asc[i]).ToString();
-                }
-            }
-
-            return final;
-        }
     }
 }

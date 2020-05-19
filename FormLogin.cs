@@ -23,7 +23,7 @@ namespace EasyCall
         {
             if (validaCampos())
             {
-                string senha = FormCadastro.criptografarSenha(tbSenha.Text);
+                string senha = Utilitarios.criptografarSenha(tbSenha.Text);
                 if (Usuario.fazerLogin(tbLogin.Text, senha))
                 {
                     if (Usuario.tipo.Equals("admin"))

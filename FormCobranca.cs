@@ -63,20 +63,6 @@ namespace EasyCall
             Application.Exit();
         }
 
-        public double calculoJuros(Double valorParcela, DateTime dataVencimento)
-        {
-            Double valorJurosTotal;
-            var hoje = DateTime.Now;
-            int diasAtraso = 0;
-            if (hoje > dataVencimento)
-            {
-                diasAtraso = (hoje.Date - dataVencimento.Date).Days;
-                valorJurosTotal = ((valorParcela * 1) / 100 ) * diasAtraso;
-                valorParcela = valorParcela + valorJurosTotal;                
-            }
-            return valorParcela;
-        }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             mostrarDados();
@@ -112,7 +98,7 @@ namespace EasyCall
             txbTelefone.Text = devedor.telefone;
 
             txbContrato.Text = d.idDivida.ToString();
-            txbValor.Text = this.calculoJuros(d.valor, d.dataVencimento).ToString("c");
+            txbValor.Text = Utilitarios.calculoJuros(d.valor, d.dataVencimento).ToString("c");
             txbDias.Text = diasAtraso.ToString();
             txbJurosdia.Text = "1%";
             txbData.Text = d.dataVencimento.ToString("dd/MM/yyyy");
@@ -127,7 +113,7 @@ namespace EasyCall
         private async void btnEmail_Click(object sender, EventArgs e)
         {
             Email mail = new Email();
-            await mail.enviarEmail(devedor.email, calculoJuros(d.valor, d.dataVencimento));
+            await mail.enviarEmail(devedor.email, Utilitarios.calculoJuros(d.valor, d.dataVencimento));
 
             var registro = "Email enviado com o valor a ser pago";
             Relatorio.inserirRegistro(d.idDivida, devedor.iddevedor, registro);

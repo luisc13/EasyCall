@@ -94,6 +94,7 @@
     <Compile Include="FormOcorrencia.Designer.cs">
       <DependentUpon>FormOcorrencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelo\Utilitarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormLogin.resx">
