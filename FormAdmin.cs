@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EasyCall.modelo;
+using EasyCall.Relatorio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +29,16 @@ namespace EasyCall
             var telaCadastro = new FormCadastro();
             telaCadastro.Show();
             this.Dispose();
+        }
+
+        private async void btnArquivo_Click(object sender, EventArgs e)
+        {
+            await Dados.carregarDados();
+        }
+
+        private void btnGerarR_Click(object sender, EventArgs e)
+        {
+            new FormOptions().Show();
         }
     }
 }

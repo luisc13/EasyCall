@@ -31,7 +31,6 @@ namespace EasyCall.DAO
                         retorno.idDivida = Convert.ToInt32(dr["IDDIVIDA"]);
                         retorno.valor = Convert.ToDouble(dr["VALOR"]);
                         retorno.dataVencimento = Convert.ToDateTime(dr["DATAVENCIMENTO"]);
-                        //retorno.idUsuario = Convert.ToInt32(dr["IDUSUARIO"]);
                         retorno.idEmpresa = Convert.ToInt32(dr["IDEMPRESA"]);
                         retorno.idDevedor = Convert.ToInt32(dr["IDDEVEDOR"]);
                         retorno.status = Convert.ToString(dr["STATUS"]);
@@ -44,6 +43,41 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
-      
+
+        public List<Divida> listDivida()
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+            SqlDataReader dr;
+
+            cmd.CommandText = "SELECT * FROM DIVIDA";
+            var retorno = new List<Divida>();
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        var item = new Divida();
+                        item.idDivida = Convert.ToInt32(dr["IDDIVIDA"]);
+                        item.valor = Convert.ToDouble(dr["VALOR"]);
+                        item.dataVencimento = Convert.ToDateTime(dr["DATAVENCIMENTO"]);
+                        item.idEmpresa = Convert.ToInt32(dr["IDEMPRESA"]);
+                        item.idDevedor = Convert.ToInt32(dr["IDDEVEDOR"]);
+                        item.status = Convert.ToString(dr["STATUS"]);
+                        //item.ul = Convert.ToDateTime(dr["UL"]);
+                        retorno.Add(item);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
+
     }
 }

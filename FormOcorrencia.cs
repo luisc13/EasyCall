@@ -36,7 +36,7 @@ namespace EasyCall
                 dao.setOcorrencia(ocr, idDivida);
 
                 var registro = "ocorrencia registrada";
-                Relatorio.inserirRegistro(idDivida, idDevedor, registro);
+                RelatorioDAO.inserirRegistro(idDivida, idDevedor, registro);
 
                 this.Close();
             }

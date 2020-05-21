@@ -54,7 +54,7 @@
     <Compile Include="DAO\DividaDAO.cs" />
     <Compile Include="DAO\JsonParser.cs" />
     <Compile Include="DAO\OcorrenciaDAO.cs" />
-    <Compile Include="DAO\Relatorio.cs" />
+    <Compile Include="DAO\RelatorioDAO.cs" />
     <Compile Include="DAO\SendEmail\Email.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="FormLogin.cs">
@@ -81,6 +81,12 @@
     <Compile Include="FormCadastro.Designer.cs">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio\FormRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\FormRelatorio.Designer.cs">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="modelo\Banco.cs" />
     <Compile Include="modelo\Dados.cs" />
     <Compile Include="modelo\Devedor.cs" />
@@ -94,7 +100,13 @@
     <Compile Include="FormOcorrencia.Designer.cs">
       <DependentUpon>FormOcorrencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="modelo\Utilitarios.cs" />
+    <Compile Include="Relatorio\FormOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\FormOptions.Designer.cs">
+      <DependentUpon>FormOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\Utilitarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormLogin.resx">
@@ -112,6 +124,9 @@
     <EmbeddedResource Include="FormOcorrencia.resx">
       <DependentUpon>FormOcorrencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\FormRelatorio.resx">
+      <DependentUpon>FormRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -121,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Relatorio\FormOptions.resx">
+      <DependentUpon>FormOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
