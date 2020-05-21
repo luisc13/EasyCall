@@ -42,5 +42,38 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
+
+        public List<Devedor> listDevedor()
+        {
+            var retorno = new List<Devedor>();
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+            SqlDataReader dr;
+
+            cmd.CommandText = "SELECT * FROM DEVEDOR";
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        var item = new Devedor();
+                        item.iddevedor = Convert.ToInt32(dr["IDDEVEDOR"]);
+                        item.nome = Convert.ToString(dr["NOME"]);
+                        item.cpf = Convert.ToString(dr["CPF"]);
+                        item.email = Convert.ToString(dr["EMAIL"]);
+                        item.telefone = Convert.ToString(dr["TELEFONE"]);
+                        retorno.Add(item);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
     }
 }

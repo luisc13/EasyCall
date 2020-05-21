@@ -34,7 +34,6 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnArquivo = new System.Windows.Forms.Button();
             this.btnGerarR = new System.Windows.Forms.Button();
-            this.btnVerR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +95,7 @@
             this.btnArquivo.TabIndex = 12;
             this.btnArquivo.Text = "Abrir Arquivo";
             this.btnArquivo.UseVisualStyleBackColor = true;
+            this.btnArquivo.Click += new System.EventHandler(this.btnArquivo_Click);
             // 
             // btnGerarR
             // 
@@ -105,15 +105,7 @@
             this.btnGerarR.TabIndex = 13;
             this.btnGerarR.Text = "Gerar Relatório";
             this.btnGerarR.UseVisualStyleBackColor = true;
-            // 
-            // btnVerR
-            // 
-            this.btnVerR.Location = new System.Drawing.Point(159, 194);
-            this.btnVerR.Name = "btnVerR";
-            this.btnVerR.Size = new System.Drawing.Size(130, 58);
-            this.btnVerR.TabIndex = 14;
-            this.btnVerR.Text = "Ver Relatório";
-            this.btnVerR.UseVisualStyleBackColor = true;
+            this.btnGerarR.Click += new System.EventHandler(this.btnGerarR_Click);
             // 
             // FormAdmin
             // 
@@ -121,7 +113,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnVerR);
             this.Controls.Add(this.btnGerarR);
             this.Controls.Add(this.btnArquivo);
             this.Controls.Add(this.btnCadastrar);
@@ -143,6 +134,5 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnArquivo;
         private System.Windows.Forms.Button btnGerarR;
-        private System.Windows.Forms.Button btnVerR;
     }
 }

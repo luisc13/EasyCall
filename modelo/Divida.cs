@@ -14,5 +14,6 @@ namespace EasyCall.modelo
         public DateTime dataVencimento;
         public int idEmpresa;
         public int idDevedor;
+        public DateTime ul;
     }
 }

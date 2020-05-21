@@ -64,7 +64,7 @@ namespace EasyCall
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            await Dados.carregarDados();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)

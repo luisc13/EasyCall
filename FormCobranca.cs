@@ -48,7 +48,7 @@ namespace EasyCall
         {
             var registro = "chamada efetuada com duração de " + this.tempoLigacao / 60 + " minutos";
             MessageBox.Show("A ligação durou: " + this.tempoLigacao);
-            Relatorio.inserirRegistro(this.d.idDivida, this.devedor.iddevedor, registro);
+            RelatorioDAO.inserirRegistro(this.d.idDivida, this.devedor.iddevedor, registro);
             this.onLigacao.Enabled = false;
             this.tempoLigacao = 0;
 
@@ -116,7 +116,7 @@ namespace EasyCall
             await mail.enviarEmail(devedor.email, Utilitarios.calculoJuros(d.valor, d.dataVencimento));
 
             var registro = "Email enviado com o valor a ser pago";
-            Relatorio.inserirRegistro(d.idDivida, devedor.iddevedor, registro);
+            RelatorioDAO.inserirRegistro(d.idDivida, devedor.iddevedor, registro);
         }
 
         private void button1_Click(object sender, EventArgs e)

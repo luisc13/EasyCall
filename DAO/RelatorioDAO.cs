@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace EasyCall.DAO
 {
-    class Relatorio
+    class RelatorioDAO
     {
         public static void inserirRegistro (int iddivida, int iddevedor, string descricao)
         {
