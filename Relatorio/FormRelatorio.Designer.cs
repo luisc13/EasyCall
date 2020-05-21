@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listRelatorio = new System.Windows.Forms.ListBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listRelatorio
@@ -39,11 +40,22 @@
             this.listRelatorio.Size = new System.Drawing.Size(806, 420);
             this.listRelatorio.TabIndex = 0;
             // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Location = new System.Drawing.Point(696, 424);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvar.TabIndex = 1;
+            this.btnSalvar.Text = "Salvar (.txt)";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // FormRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.listRelatorio);
             this.Name = "FormRelatorio";
             this.Text = "Rlatorio - visualizar";
@@ -55,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox listRelatorio;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

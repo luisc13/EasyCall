@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,24 @@ namespace EasyCall
                 listRelatorio.Items.Add(item.idrelatorio.ToString() + " Descrição: " + item.descricao
                     + " Data: " + item.data.ToString("dd/mm/yyyy") + " hora: " + item.hora.ToString("HH/mm"));
             }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            folder.ShowNewFolderButton = true;
+            folder.Description = "Selecione a pasta para salvar o arquivo";
+            folder.ShowDialog();
+            //MessageBox.Show(listRelatorio.Items[0].ToString());
+
+            string path = folder.SelectedPath.Trim();
+
+            StreamWriter sw = new StreamWriter(path + @"\Relatorio-EasyCall.txt");
+            foreach (var item in listRelatorio.Items)
+            {
+                sw.WriteLine(item.ToString());
+            }
+            sw.Dispose();
         }
     }
 }
