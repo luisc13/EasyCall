@@ -15,5 +15,6 @@ namespace EasyCall.modelo
         public int idEmpresa;
         public int idDevedor;
         public DateTime ul;
+        public string cpfdevedor;
     }
 }

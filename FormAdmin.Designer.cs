@@ -93,7 +93,7 @@
             this.btnArquivo.Name = "btnArquivo";
             this.btnArquivo.Size = new System.Drawing.Size(130, 58);
             this.btnArquivo.TabIndex = 12;
-            this.btnArquivo.Text = "Abrir Arquivo";
+            this.btnArquivo.Text = "Carregar dados de arquivo";
             this.btnArquivo.UseVisualStyleBackColor = true;
             this.btnArquivo.Click += new System.EventHandler(this.btnArquivo_Click);
             // 

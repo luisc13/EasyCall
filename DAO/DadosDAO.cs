@@ -11,7 +11,7 @@ namespace EasyCall.DAO
 {
     class DadosDAO
     {
-        public async Task<bool> inserir(Dados dados)
+        public async Task<bool> inserir(Dados dados, string nomeEmpresa)
         {
             
             bool retorno = false;
@@ -50,12 +50,14 @@ namespace EasyCall.DAO
                 cmd.Connection = conexao.conectar();
 
                 cmd.CommandText = "INSERT INTO DIVIDA(VALOR, DATAVENCIMENTO, IDEMPRESA, IDDEVEDOR, STATUS)"
-                + "VALUES(@VALOR, @DATAVENCIMENTO, @IDEMPRESA, @IDDEVEDOR, @STATUS)";
+                + "VALUES(@VALOR, @DATAVENCIMENTO, (SELECT IDEMPRESA FROM EMPRESA WHERE EMPRESA.NOME = @NOMEEMPRESA), (SELECT IDDEVEDOR FROM DEVEDOR WHERE DEVEDOR.CPF = @CPF), @STATUS)";
                 cmd.Parameters.AddWithValue("@VALOR", div.valor);
                 cmd.Parameters.AddWithValue("@DATAVENCIMENTO", div.dataVencimento);
                 cmd.Parameters.AddWithValue("@IDEMPRESA", div.idEmpresa);
                 cmd.Parameters.AddWithValue("@IDDEVEDOR", div.idDevedor);
                 cmd.Parameters.AddWithValue("@STATUS", div.status);
+                cmd.Parameters.AddWithValue("@NOMEEMPRESA", nomeEmpresa);
+                cmd.Parameters.AddWithValue("@CPF", div.cpfdevedor);
 
                 try
                 {

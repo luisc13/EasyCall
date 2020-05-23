@@ -47,12 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\BancoDAO.cs" />
+    <Compile Include="CarregarDados\FormEscolherEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarregarDados\FormEscolherEmpresa.Designer.cs">
+      <DependentUpon>FormEscolherEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\EmpresaDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\DadosDAO.cs" />
     <Compile Include="DAO\DevedorDAO.cs" />
     <Compile Include="DAO\DividaDAO.cs" />
-    <Compile Include="DAO\JsonParser.cs" />
+    <Compile Include="CarregarDados\JsonParser.cs" />
     <Compile Include="DAO\OcorrenciaDAO.cs" />
     <Compile Include="DAO\RelatorioDAO.cs" />
     <Compile Include="DAO\SendEmail\Email.cs" />
@@ -87,7 +93,7 @@
     <Compile Include="Relatorio\FormRelatorio.Designer.cs">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="modelo\Banco.cs" />
+    <Compile Include="modelo\Empresa.cs" />
     <Compile Include="modelo\Dados.cs" />
     <Compile Include="modelo\Devedor.cs" />
     <Compile Include="modelo\Divida.cs" />
@@ -109,6 +115,9 @@
     <Compile Include="Shared\Utilitarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CarregarDados\FormEscolherEmpresa.resx">
+      <DependentUpon>FormEscolherEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
