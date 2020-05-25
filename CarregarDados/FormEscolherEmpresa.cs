@@ -43,7 +43,7 @@ namespace EasyCall.CarregarDados
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);12
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
