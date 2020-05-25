@@ -34,10 +34,12 @@
             // 
             // listRelatorio
             // 
+            this.listRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listRelatorio.FormattingEnabled = true;
+            this.listRelatorio.ItemHeight = 20;
             this.listRelatorio.Location = new System.Drawing.Point(0, -2);
             this.listRelatorio.Name = "listRelatorio";
-            this.listRelatorio.Size = new System.Drawing.Size(806, 420);
+            this.listRelatorio.Size = new System.Drawing.Size(806, 404);
             this.listRelatorio.TabIndex = 0;
             // 
             // btnSalvar

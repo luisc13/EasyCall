@@ -29,7 +29,6 @@ namespace EasyCall
         { 
             var telaCadastro = new FormCadastro();
             telaCadastro.Show();
-            this.Dispose();
         }
 
         private void btnArquivo_Click(object sender, EventArgs e)
@@ -40,6 +39,11 @@ namespace EasyCall
         private void btnGerarR_Click(object sender, EventArgs e)
         {
             new FormOptions().Show();
+        }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+            lbBemVindo.Text += " " + Usuario.login;
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbBemVindo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnArquivo = new System.Windows.Forms.Button();
@@ -52,25 +52,25 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "ADM";
             // 
-            // label3
+            // lbBemVindo
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbBemVindo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label3.Font = new System.Drawing.Font("MV Boli", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(26)))), ((int)(((byte)(139)))));
-            this.label3.Location = new System.Drawing.Point(265, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 46);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Bem Vindo";
+            this.lbBemVindo.AutoSize = true;
+            this.lbBemVindo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.lbBemVindo.Font = new System.Drawing.Font("MV Boli", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBemVindo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(26)))), ((int)(((byte)(139)))));
+            this.lbBemVindo.Location = new System.Drawing.Point(265, 0);
+            this.lbBemVindo.Name = "lbBemVindo";
+            this.lbBemVindo.Size = new System.Drawing.Size(203, 46);
+            this.lbBemVindo.TabIndex = 8;
+            this.lbBemVindo.Text = "Bem Vindo";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lbBemVindo);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -120,6 +120,7 @@
             this.Name = "FormAdmin";
             this.Text = "Form3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
+            this.Load += new System.EventHandler(this.FormAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -129,7 +130,7 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbBemVindo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnArquivo;
