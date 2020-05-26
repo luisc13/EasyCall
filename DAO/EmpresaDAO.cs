@@ -42,5 +42,36 @@ namespace EasyCall.DAO
             return retorno;
         }
 
+        public Empresa getEmpresa(int ID)
+        {
+            var retorno = new Empresa();
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+            SqlDataReader dr;
+
+            cmd.CommandText = "SELECT * FROM EMPRESA WHERE EMPRESA.IDEMPRESA=@ID ";
+            cmd.Parameters.AddWithValue("@ID", ID); 
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                     
+                        retorno.idempresa = Convert.ToInt32(dr["IDEMPRESA"]);
+                        retorno.nome = Convert.ToString(dr["NOME"]);
+                        retorno.cnpj = Convert.ToString(dr["CNPJ"]);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
+
     }
 }
