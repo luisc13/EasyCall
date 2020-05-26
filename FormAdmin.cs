@@ -1,4 +1,5 @@
-﻿using EasyCall.modelo;
+﻿using EasyCall.CarregarDados;
+using EasyCall.modelo;
 using EasyCall.Relatorio;
 using System;
 using System.Collections.Generic;
@@ -28,17 +29,21 @@ namespace EasyCall
         { 
             var telaCadastro = new FormCadastro();
             telaCadastro.Show();
-            this.Dispose();
         }
 
-        private async void btnArquivo_Click(object sender, EventArgs e)
+        private void btnArquivo_Click(object sender, EventArgs e)
         {
-            await Dados.carregarDados();
+            new FormEscolherEmpresa().Show();
         }
 
         private void btnGerarR_Click(object sender, EventArgs e)
         {
             new FormOptions().Show();
+        }
+
+        private void FormAdmin_Load(object sender, EventArgs e)
+        {
+            lbBemVindo.Text += " " + Usuario.login;
         }
     }
 }

@@ -60,13 +60,12 @@ namespace EasyCall
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            new FormAdmin().Show();
             this.Close();
         }
 
         private void FormCadastro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
 
     }

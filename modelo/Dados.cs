@@ -13,7 +13,7 @@ namespace EasyCall.modelo
         public Devedor[] devedores { get; set; }
         public Divida[] dividas { get; set; }
 
-        public async static Task carregarDados()
+        public async static Task<bool> carregarDados(string nomeEmpresa)
         {
             var data = JsonParser.escolherArquivos();
 
@@ -21,11 +21,13 @@ namespace EasyCall.modelo
 
             if (data != null)
             {
-                if (await dao.inserir(data) == true)
+                if (await dao.inserir(data, nomeEmpresa))
                 {
                     MessageBox.Show("Sucesso ao carregar os dados");
+                    return true;
                 }
             }
+            return false;
         }
     }
 }

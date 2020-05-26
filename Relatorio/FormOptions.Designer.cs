@@ -56,10 +56,12 @@
             // 
             // listOptions
             // 
+            this.listOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listOptions.FormattingEnabled = true;
+            this.listOptions.ItemHeight = 20;
             this.listOptions.Location = new System.Drawing.Point(12, 73);
             this.listOptions.Name = "listOptions";
-            this.listOptions.Size = new System.Drawing.Size(776, 355);
+            this.listOptions.Size = new System.Drawing.Size(776, 344);
             this.listOptions.TabIndex = 2;
             this.listOptions.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listOptions_MouseDoubleClick);
             // 

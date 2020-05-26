@@ -19,6 +19,7 @@ namespace EasyCall
 
         Devedor devedor = new Devedor();
         DevedorDAO dao = new DevedorDAO();
+        Empresa empresa = new Empresa();
 
         Divida d = new Divida();
         DividaDAO ddao = new DividaDAO();
@@ -95,6 +96,8 @@ namespace EasyCall
 
             var hoje = DateTime.Now;
             int diasAtraso = (hoje.Date - d.dataVencimento.Date).Days;
+            empresa = new EmpresaDAO().getEmpresa(d.idEmpresa);
+            
 
             txbDevedor.Text = devedor.nome;
             txbEmail.Text = devedor.email;
@@ -107,6 +110,8 @@ namespace EasyCall
             txbJurosdia.Text = "1%";
             txbData.Text = d.dataVencimento.ToString("dd/MM/yyyy");
             txbCondicao.Text = d.status;
+            txbEmpresa.Text = empresa.nome;
+            txbValorInicial.Text = d.valor.ToString("c");
         }
 
         private void onLigacao_Tick(object sender, EventArgs e)
