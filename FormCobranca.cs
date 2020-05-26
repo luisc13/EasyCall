@@ -67,6 +67,7 @@ namespace EasyCall
         {
             mostrarDados();
             tParaLigacao.Enabled = true;
+         
         }
 
         private void limparDados()
@@ -82,7 +83,10 @@ namespace EasyCall
             txbData.Text = null;
             txbCondicao.Text = null;
         }
+        private void listarDevedor()
+        {
 
+        }
         private void mostrarDados()
         {
             this.devedor = this.dao.getDevedor();
@@ -123,6 +127,11 @@ namespace EasyCall
         {
             var ocorrencias = new FormOcorrencia(d.idDivida, devedor.iddevedor);
             ocorrencias.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
