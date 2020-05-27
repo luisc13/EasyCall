@@ -67,6 +67,7 @@ namespace EasyCall
         private void Form2_Load(object sender, EventArgs e)
         {
             mostrarDados();
+            listarDevedor();
             tParaLigacao.Enabled = true;
          
         }
@@ -86,7 +87,20 @@ namespace EasyCall
         }
         private void listarDevedor()
         {
+            var lista = dao.listDevedor();
 
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Cpf", typeof(String));
+            dt.Columns.Add("Nome", typeof(String));
+            dt.Columns.Add("Email", typeof(String));
+            dt.Columns.Add("Telefone", typeof(int));
+
+            foreach (var item in lista)
+            {
+                dt.Rows.Add(item.cpf, item.nome, item.email,item.telefone);
+            }
+            
+            gdvDevedor.DataSource = dt;
         }
         private void mostrarDados()
         {

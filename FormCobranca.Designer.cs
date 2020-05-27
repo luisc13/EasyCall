@@ -69,10 +69,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.lbxDevedor = new System.Windows.Forms.ListView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.lbxOcorrencia = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
@@ -83,6 +81,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.gdvDevedor = new System.Windows.Forms.DataGridView();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,6 +90,7 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -455,8 +456,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panel4.Controls.Add(this.gdvDevedor);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.lbxDevedor);
             this.panel4.Location = new System.Drawing.Point(12, 27);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(592, 132);
@@ -472,20 +473,11 @@
             this.label15.TabIndex = 41;
             this.label15.Text = "Lista de Devedores";
             // 
-            // lbxDevedor
-            // 
-            this.lbxDevedor.HideSelection = false;
-            this.lbxDevedor.Location = new System.Drawing.Point(19, 30);
-            this.lbxDevedor.Name = "lbxDevedor";
-            this.lbxDevedor.Size = new System.Drawing.Size(561, 97);
-            this.lbxDevedor.TabIndex = 0;
-            this.lbxDevedor.UseCompatibleStateImageBehavior = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel5.Controls.Add(this.listBox1);
             this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.lbxOcorrencia);
             this.panel5.Location = new System.Drawing.Point(610, 27);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(328, 352);
@@ -500,14 +492,6 @@
             this.label14.Size = new System.Drawing.Size(132, 16);
             this.label14.TabIndex = 42;
             this.label14.Text = "Ultimas Ocorrências";
-            // 
-            // lbxOcorrencia
-            // 
-            this.lbxOcorrencia.FormattingEnabled = true;
-            this.lbxOcorrencia.Location = new System.Drawing.Point(6, 30);
-            this.lbxOcorrencia.Name = "lbxOcorrencia";
-            this.lbxOcorrencia.Size = new System.Drawing.Size(315, 303);
-            this.lbxOcorrencia.TabIndex = 41;
             // 
             // panel6
             // 
@@ -605,6 +589,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // gdvDevedor
+            // 
+            this.gdvDevedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdvDevedor.Location = new System.Drawing.Point(6, 22);
+            this.gdvDevedor.Name = "gdvDevedor";
+            this.gdvDevedor.Size = new System.Drawing.Size(565, 104);
+            this.gdvDevedor.TabIndex = 42;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 37);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(309, 290);
+            this.listBox1.TabIndex = 43;
+            // 
             // FormCobranca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,6 +642,7 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,11 +686,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListView lbxDevedor;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ListBox lbxOcorrencia;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
@@ -702,5 +701,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView gdvDevedor;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

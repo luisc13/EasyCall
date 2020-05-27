@@ -50,7 +50,7 @@ namespace EasyCall.DAO
             Conexao conexao = new Conexao();
             SqlDataReader dr;
 
-            cmd.CommandText = "SELECT TOP 1 * FROM DEVEDOR, DIVIDA " +
+            cmd.CommandText = "SELECT * FROM DEVEDOR, DIVIDA " +
                 "WHERE DEVEDOR.IDDEVEDOR = DIVIDA.IDDEVEDOR ORDER BY DIVIDA.UL ASC";
             try
             {
