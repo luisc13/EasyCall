@@ -53,9 +53,12 @@ namespace EasyCall
             this.onLigacao.Enabled = false;
             this.tempoLigacao = 0;
 
+            
+            ddao.setUl(d.idDivida, DateTime.Now);
 
             limparDados();
             mostrarDados();
+            listarDevedor();
             this.tParaLigacao.Enabled = true;
         }
 

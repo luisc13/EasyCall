@@ -78,6 +78,24 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
+        public void setUl(int idDivida, DateTime UL)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+
+            cmd.CommandText = "UPDATE DIVIDA SET UL = @UL WHERE DIVIDA.IDDIVIDA = @IDDIVIDA";
+            cmd.Parameters.AddWithValue("@IDDIVIDA", idDivida);
+            cmd.Parameters.AddWithValue("@UL", UL);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
     }
 }
