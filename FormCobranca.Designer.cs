@@ -68,8 +68,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.gdvDevedor = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCalcular = new System.Windows.Forms.Button();
@@ -81,16 +83,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.gdvDevedor = new System.Windows.Forms.DataGridView();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -299,7 +299,7 @@
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(102, 45);
             this.btnEmail.TabIndex = 28;
-            this.btnEmail.Text = "Emitir email";
+            this.btnEmail.Text = "Enviar Boleto";
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
@@ -463,6 +463,14 @@
             this.panel4.Size = new System.Drawing.Size(592, 132);
             this.panel4.TabIndex = 38;
             // 
+            // gdvDevedor
+            // 
+            this.gdvDevedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gdvDevedor.Location = new System.Drawing.Point(6, 22);
+            this.gdvDevedor.Name = "gdvDevedor";
+            this.gdvDevedor.Size = new System.Drawing.Size(565, 104);
+            this.gdvDevedor.TabIndex = 42;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -482,6 +490,14 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(328, 352);
             this.panel5.TabIndex = 41;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 37);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(309, 290);
+            this.listBox1.TabIndex = 43;
             // 
             // label14
             // 
@@ -589,22 +605,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // gdvDevedor
-            // 
-            this.gdvDevedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gdvDevedor.Location = new System.Drawing.Point(6, 22);
-            this.gdvDevedor.Name = "gdvDevedor";
-            this.gdvDevedor.Size = new System.Drawing.Size(565, 104);
-            this.gdvDevedor.TabIndex = 42;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 37);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(309, 290);
-            this.listBox1.TabIndex = 43;
-            // 
             // FormCobranca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,11 +638,11 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
