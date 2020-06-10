@@ -102,6 +102,7 @@
             this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(129, 22);
             this.tbSenha.TabIndex = 4;
+            this.tbSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSenha_KeyDown);
             // 
             // panel1
             // 
@@ -169,7 +170,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "]";
+            this.Text = "Login - EasyCall";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
