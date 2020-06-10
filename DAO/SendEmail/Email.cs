@@ -14,21 +14,22 @@ namespace EasyCall.DAO
 {
     class Email
     {
-        private SmtpClient client = new SmtpClient();
+        private SmtpClient client;
         private static int PORTA = 587;
 
         public Email ()
         {
+            
+        }
+
+        public void enviarEmail(string para, Divida divida)
+        {
+            this.client = new SmtpClient();
             this.client.Host = "smtp.gmail.com";
             this.client.Port = PORTA;
             this.client.EnableSsl = true;
             this.client.UseDefaultCredentials = false;
             this.client.Credentials = new NetworkCredential("easycall.project@gmail.com", "Toledo123");
-        }
-
-        public async Task<bool> enviarEmail(string para, Divida divida)
-        {
-            bool ok = false;
 
             string anexo = verificaArquivo(divida);
 
@@ -41,17 +42,17 @@ namespace EasyCall.DAO
 
             try
             {
-                await client.SendMailAsync(mail);
+                client.Send(mail);
                 client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
-                ok = true;
-                MessageBox.Show("email enviado com sucesso!");
+                //MessageBox.Show("email enviado com sucesso!");
+                mail.Dispose();
+                client.Dispose();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return ok;
         }
 
         private void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
@@ -60,27 +61,36 @@ namespace EasyCall.DAO
             {
                 // caso de erro
                 MessageBox.Show("erro, tente novamente..");
+                return;
             }
             else if (e.Cancelled)
             {
                 // caso seja cancelado
+                return;
+            } 
+            else
+            {
+                
             }
         }
 
         private string verificaArquivo(Divida divida)
         {
-            string caminho = "Anexo.txt";
+            string caminho = "Boleto-EasyCall.txt";
+
             if (File.Exists(caminho))
             {
                 File.Delete(caminho);
             }
+            
             StreamWriter sw = File.CreateText(caminho);
             sw.WriteLine("EasyCall negociações");
             sw.WriteLine();
             sw.WriteLine("Você esta recebendo esse email pois solicitou o envio do boleto");
-            sw.WriteLine("Você precisa pagar: " + Utilitarios.calculoJuros(divida.valor, divida.dataVencimento));
-            sw.WriteLine("Data e vencimento: " + divida.dataVencimento.ToString());
+            sw.WriteLine("Você precisa pagar: " + Utilitarios.calculoJuros(divida.valor, divida.dataVencimento).ToString("c"));
+            sw.WriteLine("Data de vencimento: " + divida.dataVencimento.ToString("dd/MM/yyyy"));
             sw.Close();
+            sw.Dispose();
             return caminho;
         }
     }

@@ -36,6 +36,7 @@
             this.lblDataVencimento = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.tDesabilitaBtn = new System.Windows.Forms.Timer(this.components);
+            this.tEmailInterval = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lbParcelas
@@ -101,8 +102,11 @@
             // 
             // tDesabilitaBtn
             // 
-            this.tDesabilitaBtn.Interval = 3000;
-            this.tDesabilitaBtn.Tick += new System.EventHandler(this.tDesabilitaBtn_Tick);
+            this.tDesabilitaBtn.Interval = 5000;
+            // 
+            // tEmailInterval
+            // 
+            this.tEmailInterval.Interval = 2000;
             // 
             // FormParcelas
             // 
@@ -132,5 +136,6 @@
         private System.Windows.Forms.Label lblDataVencimento;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Timer tDesabilitaBtn;
+        private System.Windows.Forms.Timer tEmailInterval;
     }
 }

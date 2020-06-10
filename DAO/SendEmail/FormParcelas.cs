@@ -15,6 +15,7 @@ namespace EasyCall.DAO.SendEmail
     {
         Devedor devedor;
         Divida divida;
+        Email mail = new Email();
         public FormParcelas(Divida divida, Devedor devedor)
         {
             InitializeComponent();
@@ -37,10 +38,17 @@ namespace EasyCall.DAO.SendEmail
             btnEnviar.Enabled = false;
 
             divida.valor = (divida.valor / (lbParcelas.SelectedIndex + 1));
-            Email mail = new Email();
-            await mail.enviarEmail(devedor.email, divida);
 
-            var registro = "Email enviado com o valor a ser pago";
+            for (int i = 0; i <= lbParcelas.SelectedIndex; i++)
+            {
+                mail.enviarEmail("gustavo.hbonfim@outlook.com", divida);
+                divida.dataVencimento = divida.dataVencimento.AddMonths(1);
+                await Task.Delay(1000);
+            }
+
+
+            var registro = "Email enviado com o valor a ser pago, divido em " 
+                + (lbParcelas.SelectedIndex + 1).ToString() + "vezes";
             RelatorioDAO.inserirRegistro(divida.idDivida, devedor.iddevedor, registro);
         }
 
@@ -55,5 +63,6 @@ namespace EasyCall.DAO.SendEmail
             btnEnviar.Enabled = true;
             tDesabilitaBtn.Stop();
         }
+
     }
 }
