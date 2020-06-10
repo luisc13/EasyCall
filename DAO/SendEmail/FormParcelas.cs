@@ -41,21 +41,45 @@ namespace EasyCall.DAO.SendEmail
 
             for (int i = 0; i <= lbParcelas.SelectedIndex; i++)
             {
-                mail.enviarEmail("gustavo.hbonfim@outlook.com", divida);
-                divida.dataVencimento = divida.dataVencimento.AddMonths(1);
+                //envia email d acordo com as parcelas selecionadas
+                mail.enviarEmail(devedor.email, divida);
                 await Task.Delay(1000);
+
+                //registra na tabela de pagamentos
+                var pmt = new Pagamento();
+                pmt.valorParcela = divida.valor;
+                pmt.vencimento = divida.dataVencimento;
+                pmt.iddivida = divida.idDevedor;
+                PagamentoDAO.SetPagamento(pmt);
+
+                //mes de vencimento ++ para poder registrar e mandar emails com vencimentos diferentes
+                divida.dataVencimento = divida.dataVencimento.AddMonths(1);
             }
 
+            //atualiza status da divida para sair da lista de cobrança
+            divida.status = "boleto emitido";
+            DividaDAO.UpdateStatus(divida);
 
-            var registro = "Email enviado com o valor a ser pago, divido em " 
-                + (lbParcelas.SelectedIndex + 1).ToString() + "vezes";
+            //faz registro para gerar relatorio depois
+            var registro = "Email enviado com o valor de " + divida.valor.ToString("c") + 
+                "por parcela a ser pago, divido em " 
+                + (lbParcelas.SelectedIndex + 1).ToString() + " vezes";
             RelatorioDAO.inserirRegistro(divida.idDivida, devedor.iddevedor, registro);
         }
 
         private void lbParcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var dividaplh = new Divida();
+            dividaplh.dataVencimento = divida.dataVencimento;
+
+            lblDataVencimento.Text = "";
             lblValor.Text = (divida.valor / (lbParcelas.SelectedIndex + 1)).ToString("c");
 
+            for (int i = 0; i <= lbParcelas.SelectedIndex; i++)
+            {
+                lblDataVencimento.Text += dividaplh.dataVencimento.ToString("dd/MM/yyyy") + " ";
+                dividaplh.dataVencimento = dividaplh.dataVencimento.AddMonths(1);
+            }
         }
 
         private void tDesabilitaBtn_Tick(object sender, EventArgs e)
@@ -63,6 +87,5 @@ namespace EasyCall.DAO.SendEmail
             btnEnviar.Enabled = true;
             tDesabilitaBtn.Stop();
         }
-
     }
 }

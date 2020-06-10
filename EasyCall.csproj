@@ -60,6 +60,7 @@
     <Compile Include="DAO\DividaDAO.cs" />
     <Compile Include="CarregarDados\JsonParser.cs" />
     <Compile Include="DAO\OcorrenciaDAO.cs" />
+    <Compile Include="DAO\PagamentoDAO.cs" />
     <Compile Include="DAO\RelatorioDAO.cs" />
     <Compile Include="DAO\SendEmail\Email.cs" />
     <Compile Include="DAO\SendEmail\FormParcelas.cs">
@@ -93,6 +94,7 @@
     <Compile Include="FormCadastro.Designer.cs">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelo\Pagamento.cs" />
     <Compile Include="Relatorio\FormRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>

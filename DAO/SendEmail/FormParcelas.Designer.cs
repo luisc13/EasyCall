@@ -36,7 +36,6 @@
             this.lblDataVencimento = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.tDesabilitaBtn = new System.Windows.Forms.Timer(this.components);
-            this.tEmailInterval = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lbParcelas
@@ -66,9 +65,9 @@
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValor.Location = new System.Drawing.Point(277, 27);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(112, 18);
+            this.lblValor.Size = new System.Drawing.Size(251, 18);
             this.lblValor.TabIndex = 2;
-            this.lblValor.Text = "valor da parcela";
+            this.lblValor.Text = "Selecione para ver o valor da parcela";
             // 
             // label2
             // 
@@ -86,9 +85,8 @@
             this.lblDataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataVencimento.Location = new System.Drawing.Point(374, 76);
             this.lblDataVencimento.Name = "lblDataVencimento";
-            this.lblDataVencimento.Size = new System.Drawing.Size(156, 18);
+            this.lblDataVencimento.Size = new System.Drawing.Size(0, 18);
             this.lblDataVencimento.TabIndex = 4;
-            this.lblDataVencimento.Text = "vencimetno da parcela";
             // 
             // btnEnviar
             // 
@@ -103,10 +101,7 @@
             // tDesabilitaBtn
             // 
             this.tDesabilitaBtn.Interval = 5000;
-            // 
-            // tEmailInterval
-            // 
-            this.tEmailInterval.Interval = 2000;
+            this.tDesabilitaBtn.Tick += new System.EventHandler(this.tDesabilitaBtn_Tick);
             // 
             // FormParcelas
             // 
@@ -136,6 +131,5 @@
         private System.Windows.Forms.Label lblDataVencimento;
         private System.Windows.Forms.Button btnEnviar;
         private System.Windows.Forms.Timer tDesabilitaBtn;
-        private System.Windows.Forms.Timer tEmailInterval;
     }
 }
