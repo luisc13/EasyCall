@@ -1,4 +1,5 @@
 ﻿using EasyCall.DAO;
+using EasyCall.DAO.SendEmail;
 using EasyCall.modelo;
 using System;
 using System.Collections.Generic;
@@ -94,9 +95,9 @@ namespace EasyCall
             var lista = dao.listDevedor();
 
             DataTable dt = new DataTable();
-            dt.Columns.Add("Cpf", typeof(String));
-            dt.Columns.Add("Nome", typeof(String));
-            dt.Columns.Add("Email", typeof(String));
+            dt.Columns.Add("Cpf", typeof(string));
+            dt.Columns.Add("Nome", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
             dt.Columns.Add("Telefone", typeof(string));
 
             foreach (var item in lista)
@@ -145,19 +146,16 @@ namespace EasyCall
             this.tempoLigacao += 1;
         }
 
-        private async void btnEmail_Click(object sender, EventArgs e)
+        private void btnBoleto_Click(object sender, EventArgs e)
         {
-            Email mail = new Email();
-            await mail.enviarEmail(devedor.email, d);
-
-            var registro = "Email enviado com o valor a ser pago";
-            RelatorioDAO.inserirRegistro(d.idDivida, devedor.iddevedor, registro);
+            new FormParcelas(this.d, this.devedor).Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOcr_Click(object sender, EventArgs e)
         {
             var ocorrencias = new FormOcorrencia(d.idDivida, devedor.iddevedor);
             ocorrencias.Show();
         }
+
     }
 }

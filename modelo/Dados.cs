@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace EasyCall.modelo
 {
-    class Dados
+    public class Dados
     {
         public Devedor[] devedores { get; set; }
         public Divida[] dividas { get; set; }

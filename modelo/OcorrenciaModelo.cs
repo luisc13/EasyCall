@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyCall.modelo
 {
-    class OcorrenciaModelo
+    public class OcorrenciaModelo
     {
         public int idocorrencia;
         public string conteudo;

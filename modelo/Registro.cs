@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyCall.modelo
 {
-    class Registro
+    public class Registro
     {
         public int idrelatorio;
         public int iddivida;

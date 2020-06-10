@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyCall.modelo
 {
-    class Divida
+    public class Divida
     {
         public int idDivida;
         public string status;
