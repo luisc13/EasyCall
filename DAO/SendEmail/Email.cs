@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyCall.modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -25,16 +26,16 @@ namespace EasyCall.DAO
             this.client.Credentials = new NetworkCredential("easycall.project@gmail.com", "Toledo123");
         }
 
-        public async Task<bool> enviarEmail(string para, double valorParcela)
+        public async Task<bool> enviarEmail(string para, Divida divida)
         {
             bool ok = false;
 
-            string anexo = verificaArquivo(valorParcela);
+            string anexo = verificaArquivo(divida);
 
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("easycall.project@gmail.com");
             mail.To.Add(new MailAddress(para));
-            mail.Body = "Mensagem automatica - segue aqui o boleto...";
+            mail.Body = "Mensagem automatica, não é necessario responder. Segue em anexo seu(s) boleto(s).";
             mail.Subject = "Negociacao de credito - EasyCall";
             mail.Attachments.Add(new Attachment(anexo));
 
@@ -43,6 +44,7 @@ namespace EasyCall.DAO
                 await client.SendMailAsync(mail);
                 client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
                 ok = true;
+                MessageBox.Show("email enviado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -57,6 +59,7 @@ namespace EasyCall.DAO
             if (e.Error != null)
             {
                 // caso de erro
+                MessageBox.Show("erro, tente novamente..");
             }
             else if (e.Cancelled)
             {
@@ -64,7 +67,7 @@ namespace EasyCall.DAO
             }
         }
 
-        private string verificaArquivo(double valorParcela)
+        private string verificaArquivo(Divida divida)
         {
             string caminho = "Anexo.txt";
             if (File.Exists(caminho))
@@ -75,7 +78,8 @@ namespace EasyCall.DAO
             sw.WriteLine("EasyCall negociações");
             sw.WriteLine();
             sw.WriteLine("Você esta recebendo esse email pois solicitou o envio do boleto");
-            sw.WriteLine("Você precisa pagar: R$" + valorParcela);
+            sw.WriteLine("Você precisa pagar: " + Utilitarios.calculoJuros(divida.valor, divida.dataVencimento));
+            sw.WriteLine("Data e vencimento: " + divida.dataVencimento.ToString());
             sw.Close();
             return caminho;
         }

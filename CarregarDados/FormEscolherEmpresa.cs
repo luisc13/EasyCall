@@ -38,6 +38,7 @@ namespace EasyCall.CarregarDados
             {
                 try
                 {
+
                     await Dados.carregarDados(empresas[index].nome);
                     this.Close();
                 }

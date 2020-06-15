@@ -64,5 +64,39 @@ namespace EasyCall.DAO
             }
             return retorno;
         }
+
+        public List<OcorrenciaModelo> listLastOcorrencias (int iddivida)
+        {
+            var retorno = new List<OcorrenciaModelo>();
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+            SqlDataReader dr;
+
+            cmd.CommandText = "SELECT * FROM OCORRENCIA WHERE OCORRENCIA.IDDIVIDA = @IDDIVIDA";
+            cmd.Parameters.AddWithValue("@IDDIVIDA", iddivida);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        var item = new OcorrenciaModelo();
+                        item.idocorrencia = Convert.ToInt32(dr["IDOCORRENCIA"]);
+                        item.conteudo = Convert.ToString(dr["CONTEUDO"]);
+                        item.iddivida = Convert.ToInt32(dr["IDDIVIDA"]);
+                        item.dataocorrencia = DateTime.Parse(Convert.ToString(dr["DATAOCORRENCIA"]));
+                        item.horaOcorrencia = DateTime.Parse(Convert.ToString(dr["HORAOCORRENCIA"]));
+                        retorno.Add(item);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
     }
 }

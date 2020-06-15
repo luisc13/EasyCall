@@ -47,19 +47,20 @@ namespace EasyCall
 
         private void btnDesligar_Click(object sender, EventArgs e)
         {
+            // faz um registro para ser gerado relatorio depois
             var registro = "chamada efetuada com duração de " + this.tempoLigacao / 60 + " minutos";
-            MessageBox.Show("A ligação durou: " + this.tempoLigacao);
+            //MessageBox.Show("A ligação durou: " + this.tempoLigacao);
             RelatorioDAO.inserirRegistro(this.d.idDivida, this.devedor.iddevedor, registro);
             this.onLigacao.Enabled = false;
             this.tempoLigacao = 0;
 
-            
+            //insere a data e hora atual na tabela divida para gerenciamento de ordem de ligações
             ddao.setUl(d.idDivida, DateTime.Now);
 
             limparDados();
             mostrarDados();
             listarDevedor();
-            this.tParaLigacao.Enabled = true;
+            this.tParaLigacao.Enabled = true; // começa timer para proxima ligação
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,7 +97,7 @@ namespace EasyCall
             dt.Columns.Add("Cpf", typeof(String));
             dt.Columns.Add("Nome", typeof(String));
             dt.Columns.Add("Email", typeof(String));
-            dt.Columns.Add("Telefone", typeof(int));
+            dt.Columns.Add("Telefone", typeof(string));
 
             foreach (var item in lista)
             {
@@ -129,6 +130,14 @@ namespace EasyCall
             txbCondicao.Text = d.status;
             txbEmpresa.Text = empresa.nome;
             txbValorInicial.Text = d.valor.ToString("c");
+
+            //lista de ultimas ocorrencias
+            var listaOcr = new OcorrenciaDAO().listLastOcorrencias(d.idDivida);
+            foreach (var item in listaOcr)
+            {
+                lbOcr.Items.Add(item.conteudo + "data: " + item.dataocorrencia.ToString());
+                lbOcr.Items.Add("");
+            }
         }
 
         private void onLigacao_Tick(object sender, EventArgs e)
@@ -139,7 +148,7 @@ namespace EasyCall
         private async void btnEmail_Click(object sender, EventArgs e)
         {
             Email mail = new Email();
-            await mail.enviarEmail(devedor.email, Utilitarios.calculoJuros(d.valor, d.dataVencimento));
+            await mail.enviarEmail(devedor.email, d);
 
             var registro = "Email enviado com o valor a ser pago";
             RelatorioDAO.inserirRegistro(d.idDivida, devedor.iddevedor, registro);
@@ -151,7 +160,7 @@ namespace EasyCall
             ocorrencias.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnCalcular_Click(object sender, EventArgs e)
         {
 
         }

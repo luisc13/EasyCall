@@ -71,16 +71,9 @@
             this.gdvDevedor = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbOcr = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCalcular = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -295,7 +288,7 @@
             // 
             // btnEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(616, 453);
+            this.btnEmail.Location = new System.Drawing.Point(129, 26);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(102, 45);
             this.btnEmail.TabIndex = 28;
@@ -468,6 +461,7 @@
             this.gdvDevedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gdvDevedor.Location = new System.Drawing.Point(6, 22);
             this.gdvDevedor.Name = "gdvDevedor";
+            this.gdvDevedor.ReadOnly = true;
             this.gdvDevedor.Size = new System.Drawing.Size(565, 104);
             this.gdvDevedor.TabIndex = 42;
             // 
@@ -484,20 +478,20 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel5.Controls.Add(this.listBox1);
+            this.panel5.Controls.Add(this.lbOcr);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Location = new System.Drawing.Point(610, 27);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(328, 352);
             this.panel5.TabIndex = 41;
             // 
-            // listBox1
+            // lbOcr
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 37);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(309, 290);
-            this.listBox1.TabIndex = 43;
+            this.lbOcr.FormattingEnabled = true;
+            this.lbOcr.Location = new System.Drawing.Point(6, 37);
+            this.lbOcr.Name = "lbOcr";
+            this.lbOcr.Size = new System.Drawing.Size(309, 290);
+            this.lbOcr.TabIndex = 43;
             // 
             // label14
             // 
@@ -512,79 +506,11 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.GreenYellow;
-            this.panel6.Controls.Add(this.btnCalcular);
-            this.panel6.Controls.Add(this.label18);
-            this.panel6.Controls.Add(this.label17);
-            this.panel6.Controls.Add(this.label16);
-            this.panel6.Controls.Add(this.textBox3);
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.textBox1);
+            this.panel6.Controls.Add(this.btnEmail);
             this.panel6.Location = new System.Drawing.Point(201, 418);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(403, 110);
             this.panel6.TabIndex = 43;
-            // 
-            // btnCalcular
-            // 
-            this.btnCalcular.Location = new System.Drawing.Point(202, 72);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(95, 23);
-            this.btnCalcular.TabIndex = 44;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(4, 56);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(131, 16);
-            this.label18.TabIndex = 47;
-            this.label18.Text = "Vencimento Parcela";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(187, 10);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 16);
-            this.label17.TabIndex = 46;
-            this.label17.Text = "Nº Parcela";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(4, 10);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 16);
-            this.label16.TabIndex = 45;
-            this.label16.Text = "Valor com desconto";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(7, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(159, 20);
-            this.textBox3.TabIndex = 44;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(183, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 20);
-            this.textBox2.TabIndex = 29;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(7, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 28;
             // 
             // button2
             // 
@@ -603,7 +529,6 @@
             this.button4.TabIndex = 46;
             this.button4.Text = "Adicionar";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FormCobranca
             // 
@@ -621,7 +546,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.btnEmail);
             this.Controls.Add(this.btnDesligar);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormCobranca";
@@ -642,7 +566,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,18 +613,11 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView gdvDevedor;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbOcr;
     }
 }
