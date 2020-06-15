@@ -97,5 +97,24 @@ namespace EasyCall.DAO
             }
         }
 
+        public static void UpdateStatus (Divida divida)
+        {
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+
+            cmd.CommandText = "UPDATE DIVIDA SET STATUS = @STATUS WHERE DIVIDA.IDDIVIDA = @IDDIVIDA";
+            cmd.Parameters.AddWithValue("@IDDIVIDA", divida.idDivida);
+            cmd.Parameters.AddWithValue("@STATUS", divida.status);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

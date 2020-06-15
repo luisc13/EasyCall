@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyCall.modelo
 {
-    class Devedor
+    public class Devedor
     {
         public int iddevedor;
         public string nome;

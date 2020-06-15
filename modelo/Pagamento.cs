@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace EasyCall.modelo
 {
-    public class Registro
+    public class Pagamento
     {
-        public int idrelatorio;
+        public int idpagamento;
+        public int qtdParcelas;
+        public double valorParcela;
+        public DateTime vencimento;
         public int iddivida;
-        public int iddevedor;
-        public DateTime data;
-        public DateTime hora;
-        public string descricao;
     }
 }

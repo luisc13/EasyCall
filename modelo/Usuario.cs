@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace EasyCall.modelo
 {
-    class Usuario
+    public class Usuario
     {
         public static int idFuncionario;
         public static string login;

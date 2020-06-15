@@ -52,7 +52,7 @@
             this.txbCondicao = new System.Windows.Forms.TextBox();
             this.txbData = new System.Windows.Forms.TextBox();
             this.onLigacao = new System.Windows.Forms.Timer(this.components);
-            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnBoleto = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txbValorInicial = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.txbComissao = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOcr = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gdvDevedor = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
@@ -286,8 +286,9 @@
             this.onLigacao.Interval = 1000;
             this.onLigacao.Tick += new System.EventHandler(this.onLigacao_Tick);
             // 
-            // btnEmail
+            // btnBoleto
             // 
+<<<<<<< HEAD
             this.btnEmail.Location = new System.Drawing.Point(129, 26);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(102, 45);
@@ -295,6 +296,15 @@
             this.btnEmail.Text = "Enviar Boleto";
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+=======
+            this.btnBoleto.Location = new System.Drawing.Point(616, 453);
+            this.btnBoleto.Name = "btnBoleto";
+            this.btnBoleto.Size = new System.Drawing.Size(102, 45);
+            this.btnBoleto.TabIndex = 28;
+            this.btnBoleto.Text = "Emitir boleto";
+            this.btnBoleto.UseVisualStyleBackColor = true;
+            this.btnBoleto.Click += new System.EventHandler(this.btnBoleto_Click);
+>>>>>>> c7e2c9463b795e8f06ce36f1ede388052e041943
             // 
             // menuStrip1
             // 
@@ -436,15 +446,15 @@
             this.label13.TabIndex = 5;
             this.label13.Text = "Comissão EasyCall";
             // 
-            // button1
+            // btnOcr
             // 
-            this.button1.Location = new System.Drawing.Point(944, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 45);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Ocorrência";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOcr.Location = new System.Drawing.Point(944, 108);
+            this.btnOcr.Name = "btnOcr";
+            this.btnOcr.Size = new System.Drawing.Size(102, 45);
+            this.btnOcr.TabIndex = 37;
+            this.btnOcr.Text = "Ocorrência";
+            this.btnOcr.UseVisualStyleBackColor = true;
+            this.btnOcr.Click += new System.EventHandler(this.btnOcr_Click);
             // 
             // panel4
             // 
@@ -541,15 +551,19 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOcr);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.btnBoleto);
+>>>>>>> c7e2c9463b795e8f06ce36f1ede388052e041943
             this.Controls.Add(this.btnDesligar);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormCobranca";
-            this.Text = "Form2";
+            this.Text = "Pagina Inicial - EasyCall";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -595,7 +609,7 @@
         private System.Windows.Forms.TextBox txbCondicao;
         private System.Windows.Forms.TextBox txbData;
         private System.Windows.Forms.Timer onLigacao;
-        private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.Button btnBoleto;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.TextBox txbValorInicial;
@@ -607,7 +621,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txbComissao;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOcr;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel5;

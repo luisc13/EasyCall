@@ -71,5 +71,13 @@ namespace EasyCall
         {
             this.ActiveControl = tbLogin;
         }
+
+        private void tbSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEntrar.PerformClick();
+            }
+        }
     }
 }
