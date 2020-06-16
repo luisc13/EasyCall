@@ -43,13 +43,12 @@ namespace EasyCall
                 {
                     MessageBox.Show("Preencher campo obrigatório 'CPF'");
                 }
-                if (Utilitarios.Validacoes.ValidaCPF(cpf))
 
-                    MessageBox.Show("CPF Válido!");
-
-                else
-
-                    MessageBox.Show("CPF Inválido!");
+                if (!Utilitarios.Validacoes.ValidaCPF(cpf))
+                {
+                    MessageBox.Show("cpf invalido");
+                    return;
+                }
 
                 //---------------------------
                 var tipo = txbTipo.Text;
