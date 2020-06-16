@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCobranca));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -140,11 +141,13 @@
             // 
             // btnDesligar
             // 
-            this.btnDesligar.Location = new System.Drawing.Point(944, 57);
+            this.btnDesligar.FlatAppearance.BorderSize = 0;
+            this.btnDesligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesligar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesligar.Image")));
+            this.btnDesligar.Location = new System.Drawing.Point(874, 474);
             this.btnDesligar.Name = "btnDesligar";
-            this.btnDesligar.Size = new System.Drawing.Size(102, 45);
+            this.btnDesligar.Size = new System.Drawing.Size(147, 45);
             this.btnDesligar.TabIndex = 16;
-            this.btnDesligar.Text = "Desligar";
             this.btnDesligar.UseVisualStyleBackColor = true;
             this.btnDesligar.Click += new System.EventHandler(this.btnDesligar_Click);
             // 
@@ -295,12 +298,16 @@
             // 
             // btnBoleto
             // 
-            this.btnBoleto.Location = new System.Drawing.Point(616, 453);
+            this.btnBoleto.BackColor = System.Drawing.Color.Lime;
+            this.btnBoleto.FlatAppearance.BorderSize = 0;
+            this.btnBoleto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBoleto.Image = ((System.Drawing.Image)(resources.GetObject("btnBoleto.Image")));
+            this.btnBoleto.Location = new System.Drawing.Point(616, 480);
             this.btnBoleto.Name = "btnBoleto";
-            this.btnBoleto.Size = new System.Drawing.Size(102, 45);
+            this.btnBoleto.Size = new System.Drawing.Size(189, 45);
             this.btnBoleto.TabIndex = 28;
-            this.btnBoleto.Text = "Emitir boleto";
-            this.btnBoleto.UseVisualStyleBackColor = true;
+            this.btnBoleto.TabStop = false;
+            this.btnBoleto.UseVisualStyleBackColor = false;
             this.btnBoleto.Click += new System.EventHandler(this.btnBoleto_Click);
             // 
             // menuStrip1
@@ -309,7 +316,7 @@
             this.relatóriosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1103, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1034, 24);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -357,7 +364,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel1.BackColor = System.Drawing.Color.Chartreuse;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txbDevedor);
             this.panel1.Controls.Add(this.label2);
@@ -373,7 +380,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.panel2.BackColor = System.Drawing.Color.DarkOrange;
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txbEmpresa);
@@ -397,7 +404,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel3.BackColor = System.Drawing.Color.Chartreuse;
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.txbComissao);
@@ -445,17 +452,19 @@
             // 
             // btnOcr
             // 
-            this.btnOcr.Location = new System.Drawing.Point(944, 108);
+            this.btnOcr.FlatAppearance.BorderSize = 0;
+            this.btnOcr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOcr.Image = ((System.Drawing.Image)(resources.GetObject("btnOcr.Image")));
+            this.btnOcr.Location = new System.Drawing.Point(704, 385);
             this.btnOcr.Name = "btnOcr";
-            this.btnOcr.Size = new System.Drawing.Size(102, 45);
+            this.btnOcr.Size = new System.Drawing.Size(147, 45);
             this.btnOcr.TabIndex = 37;
-            this.btnOcr.Text = "Ocorrência";
             this.btnOcr.UseVisualStyleBackColor = true;
             this.btnOcr.Click += new System.EventHandler(this.btnOcr_Click);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panel4.BackColor = System.Drawing.Color.DarkOrange;
             this.panel4.Controls.Add(this.gdvDevedor);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Location = new System.Drawing.Point(12, 27);
@@ -483,7 +492,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel5.BackColor = System.Drawing.Color.DarkOrange;
             this.panel5.Controls.Add(this.lbOcr);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Location = new System.Drawing.Point(610, 27);
@@ -511,7 +520,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.GreenYellow;
+            this.panel6.BackColor = System.Drawing.Color.Chartreuse;
             this.panel6.Controls.Add(this.btnCalcular);
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.label17);
@@ -609,7 +618,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
-            this.ClientSize = new System.Drawing.Size(1103, 546);
+            this.ClientSize = new System.Drawing.Size(1034, 545);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel6);

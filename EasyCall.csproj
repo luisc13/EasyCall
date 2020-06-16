@@ -172,5 +172,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\btnBoleto.png" />
+    <Content Include="assets\btnDesligar.png" />
+    <Content Include="assets\btnOcorrencia.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
