@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin));
             this.label4 = new System.Windows.Forms.Label();
             this.lbBemVindo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -79,31 +80,37 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
             this.btnCadastrar.Location = new System.Drawing.Point(12, 130);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(130, 58);
             this.btnCadastrar.TabIndex = 11;
-            this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnArquivo
             // 
-            this.btnArquivo.Location = new System.Drawing.Point(12, 194);
+            this.btnArquivo.FlatAppearance.BorderSize = 0;
+            this.btnArquivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArquivo.Image = ((System.Drawing.Image)(resources.GetObject("btnArquivo.Image")));
+            this.btnArquivo.Location = new System.Drawing.Point(436, 130);
             this.btnArquivo.Name = "btnArquivo";
-            this.btnArquivo.Size = new System.Drawing.Size(130, 58);
+            this.btnArquivo.Size = new System.Drawing.Size(174, 58);
             this.btnArquivo.TabIndex = 12;
-            this.btnArquivo.Text = "Carregar dados de arquivo";
             this.btnArquivo.UseVisualStyleBackColor = true;
             this.btnArquivo.Click += new System.EventHandler(this.btnArquivo_Click);
             // 
             // btnGerarR
             // 
-            this.btnGerarR.Location = new System.Drawing.Point(159, 130);
+            this.btnGerarR.FlatAppearance.BorderSize = 0;
+            this.btnGerarR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerarR.Image = ((System.Drawing.Image)(resources.GetObject("btnGerarR.Image")));
+            this.btnGerarR.Location = new System.Drawing.Point(204, 130);
             this.btnGerarR.Name = "btnGerarR";
-            this.btnGerarR.Size = new System.Drawing.Size(130, 58);
+            this.btnGerarR.Size = new System.Drawing.Size(179, 58);
             this.btnGerarR.TabIndex = 13;
-            this.btnGerarR.Text = "Gerar Relatório";
             this.btnGerarR.UseVisualStyleBackColor = true;
             this.btnGerarR.Click += new System.EventHandler(this.btnGerarR_Click);
             // 
@@ -111,7 +118,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnGerarR);
             this.Controls.Add(this.btnArquivo);
