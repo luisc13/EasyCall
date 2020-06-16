@@ -54,8 +54,6 @@
             this.txbData = new System.Windows.Forms.TextBox();
             this.onLigacao = new System.Windows.Forms.Timer(this.components);
             this.btnBoleto = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txbValorInicial = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -74,11 +72,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbOcr = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -303,22 +299,6 @@
             this.btnBoleto.UseVisualStyleBackColor = false;
             this.btnBoleto.Click += new System.EventHandler(this.btnBoleto_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.relatóriosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1103, 24);
-            this.menuStrip1.TabIndex = 29;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // relatóriosToolStripMenuItem
-            // 
-            this.relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            this.relatóriosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.relatóriosToolStripMenuItem.Text = "Relatórios";
-            // 
             // txbValorInicial
             // 
             this.txbValorInicial.Location = new System.Drawing.Point(6, 81);
@@ -512,14 +492,6 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "Ultimas Ocorrências";
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.GreenYellow;
-            this.panel6.Location = new System.Drawing.Point(201, 418);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(403, 110);
-            this.panel6.TabIndex = 43;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(15, 475);
@@ -557,23 +529,18 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnOcr);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnBoleto);
             this.Controls.Add(this.btnDesligar);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormCobranca";
             this.Text = "Pagina Inicial - EasyCall";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -586,7 +553,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -615,8 +581,6 @@
         private System.Windows.Forms.TextBox txbData;
         private System.Windows.Forms.Timer onLigacao;
         private System.Windows.Forms.Button btnBoleto;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem relatóriosToolStripMenuItem;
         private System.Windows.Forms.TextBox txbValorInicial;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -631,7 +595,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txbComissãoTotalMes;
         private System.Windows.Forms.Button button2;
