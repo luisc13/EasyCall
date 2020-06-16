@@ -163,6 +163,9 @@ namespace EasyCall
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var formLogin = new FormLogin();
+            this.Hide();
+            formLogin.Show();
         }
     }
 }
