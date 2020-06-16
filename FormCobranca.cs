@@ -131,6 +131,8 @@ namespace EasyCall
             txbCondicao.Text = d.status;
             txbEmpresa.Text = empresa.nome;
             txbValorInicial.Text = d.valor.ToString("c");
+            txbComissãoTotalMes.Text = Usuario.comissao.ToString();
+            txbComissao.Text = (0.05 * d.valor + Usuario.comissao).ToString("c");
 
             //lista de ultimas ocorrencias
             var listaOcr = new OcorrenciaDAO().listLastOcorrencias(d.idDivida);

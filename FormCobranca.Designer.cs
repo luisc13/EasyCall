@@ -72,8 +72,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbOcr = new System.Windows.Forms.ListBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -133,7 +131,7 @@
             this.btnDesligar.FlatAppearance.BorderSize = 0;
             this.btnDesligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesligar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesligar.Image")));
-            this.btnDesligar.Location = new System.Drawing.Point(874, 474);
+            this.btnDesligar.Location = new System.Drawing.Point(234, 489);
             this.btnDesligar.Name = "btnDesligar";
             this.btnDesligar.Size = new System.Drawing.Size(147, 45);
             this.btnDesligar.TabIndex = 16;
@@ -291,7 +289,7 @@
             this.btnBoleto.FlatAppearance.BorderSize = 0;
             this.btnBoleto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBoleto.Image = ((System.Drawing.Image)(resources.GetObject("btnBoleto.Image")));
-            this.btnBoleto.Location = new System.Drawing.Point(616, 480);
+            this.btnBoleto.Location = new System.Drawing.Point(12, 489);
             this.btnBoleto.Name = "btnBoleto";
             this.btnBoleto.Size = new System.Drawing.Size(189, 45);
             this.btnBoleto.TabIndex = 28;
@@ -428,7 +426,7 @@
             this.btnOcr.FlatAppearance.BorderSize = 0;
             this.btnOcr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOcr.Image = ((System.Drawing.Image)(resources.GetObject("btnOcr.Image")));
-            this.btnOcr.Location = new System.Drawing.Point(704, 385);
+            this.btnOcr.Location = new System.Drawing.Point(414, 489);
             this.btnOcr.Name = "btnOcr";
             this.btnOcr.Size = new System.Drawing.Size(147, 45);
             this.btnOcr.TabIndex = 37;
@@ -492,24 +490,6 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "Ultimas Ocorrências";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(15, 475);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "Tirar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(99, 475);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 46;
-            this.button4.Text = "Adicionar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(953, 27);
@@ -527,8 +507,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1103, 546);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnOcr);
@@ -597,8 +575,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txbComissãoTotalMes;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView gdvDevedor;
         private System.Windows.Forms.ListBox lbOcr;
         private System.Windows.Forms.Button button1;
