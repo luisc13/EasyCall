@@ -173,9 +173,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\brnCadastrar.png" />
     <Content Include="assets\btnBoleto.png" />
     <Content Include="assets\btnDesligar.png" />
+    <Content Include="assets\btnEnviarGeneric.png" />
+    <Content Include="assets\btnGerarRelatorio.png" />
     <Content Include="assets\btnOcorrencia.png" />
+    <Content Include="assets\carregarDadosbutton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
