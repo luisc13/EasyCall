@@ -31,7 +31,8 @@ namespace EasyCall
                         var telaAdmin = new FormAdmin();
                         telaAdmin.Show();
                         this.Hide();
-                    } else
+                    }
+                    else
                     {
                         var tela2 = new FormCobranca();
                         tela2.Show();
@@ -64,7 +65,7 @@ namespace EasyCall
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

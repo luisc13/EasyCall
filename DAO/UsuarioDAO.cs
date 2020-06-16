@@ -27,7 +27,7 @@ namespace EasyCall.DAO
                 if (dr.HasRows)
                 {
                     isValid = true;
-                    while(dr.Read()) // seta o funcionario
+                    while (dr.Read()) // seta o funcionario
                     {
                         Usuario.idFuncionario = Convert.ToInt32(dr["idusuario"]);
                         Usuario.login = Convert.ToString(dr["login"]);
@@ -35,6 +35,7 @@ namespace EasyCall.DAO
                         Usuario.cpf = Convert.ToString(dr["cpf"]);
                         Usuario.email = Convert.ToString(dr["email"]);
                         Usuario.tipo = Convert.ToString(dr["tipo"]);
+                        Usuario.comissao = Convert.ToDouble(dr["comissao"]);
                     }
                 }
             }
@@ -50,12 +51,13 @@ namespace EasyCall.DAO
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
 
-            cmd.CommandText = "INSERT INTO USUARIO (LOGIN, SENHA, CPF, EMAIL, TIPO) VALUES(@LOGIN, @SENHA, @CPF, @EMAIL, @TIPO)";
+            cmd.CommandText = "INSERT INTO USUARIO (LOGIN, SENHA, CPF, EMAIL, TIPO, COMISSAO) VALUES(@LOGIN, @SENHA, @CPF, @EMAIL, @TIPO, @COMISSAO)";
             cmd.Parameters.AddWithValue("@LOGIN", login);
             cmd.Parameters.AddWithValue("@SENHA", senha);
             cmd.Parameters.AddWithValue("@CPF", cpf);
-            cmd.Parameters.AddWithValue("@EMAIL",email);
+            cmd.Parameters.AddWithValue("@EMAIL", email);
             cmd.Parameters.AddWithValue("@TIPO", tipo);
+            cmd.Parameters.AddWithValue("@COMISSAO", 0);
             try
             {
                 cmd.Connection = conexao.conectar();
@@ -66,5 +68,30 @@ namespace EasyCall.DAO
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void insertComissao(Divida divida)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+
+            cmd.CommandText = "UPDATE USUARIO SET COMISSAO = @COMISSAO WHERE USUARIO.IDUSUARIO = @ID";
+            cmd.Parameters.AddWithValue("@COMISSAO", (0.05 * divida.valor + Usuario.comissao));
+            cmd.Parameters.AddWithValue("@ID", Usuario.idFuncionario);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            //SE EMITIR BOLETO VAI SALVAR NO BANCO
+            //PEGAR COMISAO QUE O USUARIO JA TEM E SOMAR COM A QUE ELE TERÁ CASO EMITA BOLETO
+        }
+
+
     }
-    }
+}

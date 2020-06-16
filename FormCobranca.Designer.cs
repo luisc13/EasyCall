@@ -64,7 +64,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbComissãoTotalMes = new System.Windows.Forms.TextBox();
             this.txbComissao = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnOcr = new System.Windows.Forms.Button();
@@ -399,7 +399,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Chartreuse;
             this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.txbComissãoTotalMes);
             this.panel3.Controls.Add(this.txbComissao);
             this.panel3.Controls.Add(this.label13);
             this.panel3.Location = new System.Drawing.Point(12, 367);
@@ -413,17 +413,17 @@
             this.label19.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(3, 58);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(168, 16);
+            this.label19.Size = new System.Drawing.Size(148, 16);
             this.label19.TabIndex = 23;
-            this.label19.Text = "Comissão usada desconto";
+            this.label19.Text = "Comissão total no mês";
             // 
-            // textBox4
+            // txbComissãoTotalMes
             // 
-            this.textBox4.Location = new System.Drawing.Point(3, 77);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(159, 20);
-            this.textBox4.TabIndex = 22;
+            this.txbComissãoTotalMes.Location = new System.Drawing.Point(3, 77);
+            this.txbComissãoTotalMes.Name = "txbComissãoTotalMes";
+            this.txbComissãoTotalMes.ReadOnly = true;
+            this.txbComissãoTotalMes.Size = new System.Drawing.Size(159, 20);
+            this.txbComissãoTotalMes.TabIndex = 22;
             // 
             // txbComissao
             // 
@@ -633,7 +633,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbComissãoTotalMes;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView gdvDevedor;
