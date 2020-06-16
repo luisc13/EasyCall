@@ -34,6 +34,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnArquivo = new System.Windows.Forms.Button();
             this.btnGerarR = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,12 +108,23 @@
             this.btnGerarR.UseVisualStyleBackColor = true;
             this.btnGerarR.Click += new System.EventHandler(this.btnGerarR_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(159, 194);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 58);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGerarR);
             this.Controls.Add(this.btnArquivo);
             this.Controls.Add(this.btnCadastrar);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnArquivo;
         private System.Windows.Forms.Button btnGerarR;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -76,6 +76,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,7 +84,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -288,15 +288,6 @@
             // 
             // btnBoleto
             // 
-<<<<<<< HEAD
-            this.btnEmail.Location = new System.Drawing.Point(129, 26);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(102, 45);
-            this.btnEmail.TabIndex = 28;
-            this.btnEmail.Text = "Enviar Boleto";
-            this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
-=======
             this.btnBoleto.Location = new System.Drawing.Point(616, 453);
             this.btnBoleto.Name = "btnBoleto";
             this.btnBoleto.Size = new System.Drawing.Size(102, 45);
@@ -304,7 +295,6 @@
             this.btnBoleto.Text = "Emitir boleto";
             this.btnBoleto.UseVisualStyleBackColor = true;
             this.btnBoleto.Click += new System.EventHandler(this.btnBoleto_Click);
->>>>>>> c7e2c9463b795e8f06ce36f1ede388052e041943
             // 
             // menuStrip1
             // 
@@ -516,7 +506,6 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.GreenYellow;
-            this.panel6.Controls.Add(this.btnEmail);
             this.panel6.Location = new System.Drawing.Point(201, 418);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(403, 110);
@@ -540,12 +529,23 @@
             this.button4.Text = "Adicionar";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(944, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 45);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormCobranca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(210)))), ((int)(((byte)(238)))));
             this.ClientSize = new System.Drawing.Size(1103, 546);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel6);
@@ -556,10 +556,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-<<<<<<< HEAD
-=======
             this.Controls.Add(this.btnBoleto);
->>>>>>> c7e2c9463b795e8f06ce36f1ede388052e041943
             this.Controls.Add(this.btnDesligar);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormCobranca";
@@ -579,7 +576,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gdvDevedor)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,5 +629,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView gdvDevedor;
         private System.Windows.Forms.ListBox lbOcr;
+        private System.Windows.Forms.Button button1;
     }
 }

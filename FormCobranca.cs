@@ -156,13 +156,13 @@ namespace EasyCall
             var ocorrencias = new FormOcorrencia(d.idDivida, devedor.iddevedor);
             ocorrencias.Show();
         }
-
-<<<<<<< HEAD
         private void btnCalcular_Click(object sender, EventArgs e)
         {
 
         }
-=======
->>>>>>> c7e2c9463b795e8f06ce36f1ede388052e041943
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
